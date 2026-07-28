@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+:root {
+  --lol-bg: #0a0a0c;
+  --lol-gold: #c8aa6e;
+  --lol-gold-hover: #d4b87c;
+  --lol-text: #f0e6d2;
+  --lol-muted: #a09b8c;
+  --lol-border: #1e2328;
+
+}
+@theme {
+  
+}
+
+html {
+  overscroll-behavior: none;
+  overflow:scroll;
+}
+
+body {
+   font-family: "Geist", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+ 
+  background-color: #000000;
+  color: white;
+}
+
+h1 {
+  font-family: "EB Garamond", serif;
+}
+
+h2{
+  font-family: "EB Garamond", serif;
+}
+
+/* =========================
+   Geist
+========================= */
+
+@font-face {
+  font-family: "Geist";
+  src: url("./assets/fonts/Geist-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("./assets/fonts/Geist-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("./assets/fonts/Geist-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* =========================
+   Space Grotesk
+========================= */
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("./assets/fonts/SpaceGrotesk-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("./assets/fonts/SpaceGrotesk-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("./assets/fonts/SpaceGrotesk-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* =========================
+   EB Garamond
+========================= */
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("./assets/fonts/EBGaramond-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("./assets/fonts/EBGaramond-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("./assets/fonts/EBGaramond-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}

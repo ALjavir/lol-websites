@@ -1,0 +1,95 @@
+
+
+
+.main-footer {
+  
+  background-color: var(--lol-bg);
+  border-top: 1px solid var(--lol-border);
+  padding: 5rem 1.5rem 3.5rem 1.5rem;
+  color: var(--lol-text);
+  font-family: system-ui, -apple-system, sans-serif;
+  text-align: center;
+  user-select: none;
+}
+
+
+.footer-container {
+    gap: 50px;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+/* 2. Footer Links Navigation */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+
+
+.footer-link:hover {
+  color: var(--lol-gold);
+}
+
+/* 3. Disclaimer Paragraph */
+.footer-disclaimer {
+  color: var(--lol-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================== */
+
+/* Tablet & Mobile Layout Adjustment */
+@media (max-width: 768px) {
+    .footer-container{
+        gap: 20px;
+    }
+  .main-footer {
+    padding: 3rem 1rem 2.5rem 1rem;
+  }
+
+  .footer-brand {
+    font-size: 1.35rem;
+    letter-spacing: 2.5px;
+    margin-bottom: 1.75rem;
+  }
+
+  .footer-links {
+    gap: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-link {
+    font-size: 0.75rem;
+  }
+
+  .footer-disclaimer {
+    font-size: 0.68rem;
+    max-width: 90%;
+  }
+}
+
+/* Ultra Small Screens */
+@media (max-width: 480px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
