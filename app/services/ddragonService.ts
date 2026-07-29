@@ -1,15 +1,14 @@
 const DDRAGON_BASE_URL = 'https://ddragon.leagueoflegends.com';
 
-// State / Cache Variables
+
 let cachedVersion: string | null = null;
-let cachedPatchNotes: any[] | null = null;
+//let cachedPatchNotes: any[] | null = null;
+let cachedNews: any[] | null = null;
 let cachedChampions: any[] | null = null;
 let cachedItems: any[] | null = null;
 let lang: string = 'en_US';
 
-/**
- * 1. Get Patch Version (Fetches once, then returns cached string)
- */
+
 export async function getLatestPatchVersion(): Promise<string> {
   if (cachedVersion) return cachedVersion;
 
@@ -26,22 +25,46 @@ export async function getLatestPatchVersion(): Promise<string> {
   }
 }
 
-/**
- * 2. Get All Patch Notes (Cached)
- */
-export async function getAllPatchNote(): Promise<any[]> {
-  if (cachedPatchNotes) return cachedPatchNotes;
+
+
+
+// export async function getAllPatchNote(): Promise<any[]> {
+//   if (cachedPatchNotes) return cachedPatchNotes;
+
+//   try {
+//     const res = await fetch(`https://soraclee.github.io/riotgames-news-api/data/lol/patchNoteEn.json`);
+//     if (!res.ok) throw new Error("Failed to fetch patch notes");
+    
+//     const data = await res.json();
+//     // Handles array responses directly
+//     cachedPatchNotes = Array.isArray(data) ? data : Object.values(data);
+//     return cachedPatchNotes;
+//   } catch (error) {
+//     console.error("Error fetching patch notes:", error);
+//     throw error;
+//   }
+// }
+
+
+
+
+export async function getLoLNews(category = 'allNewsEn'): Promise<any[]> {
+  if (cachedNews && category === 'allNewsEn') return cachedNews;
 
   try {
-    const res = await fetch(`https://soraclee.github.io/riotgames-news-api/data/lol/patchNoteEn.json`);
-    if (!res.ok) throw new Error("Failed to fetch patch notes");
+    const res = await fetch(`https://soraclee.github.io/riotgames-news-api/data/lol/${category}.json`);
+    if (!res.ok) throw new Error("Failed to fetch League news");
     
     const data = await res.json();
-    // Handles array responses directly
-    cachedPatchNotes = Array.isArray(data) ? data : Object.values(data);
-    return cachedPatchNotes;
+    const newsArray = Array.isArray(data) ? data : Object.values(data);
+
+    if (category === 'allNewsEn') {
+      cachedNews = newsArray;
+    }
+
+    return newsArray;
   } catch (error) {
-    console.error("Error fetching patch notes:", error);
+    console.error(`Error fetching news [${category}]:`, error);
     throw error;
   }
 }

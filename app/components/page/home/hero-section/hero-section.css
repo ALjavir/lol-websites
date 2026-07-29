@@ -1,10 +1,120 @@
-#home-hero-section{
-    position: relative
-    ;
+
+
+/* 1. Main Hero Container */
+#home-hero-section {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
 }
 
-.home-hero-video{
+/* 2. Fullscreen Video Background */
+.home-hero-video {
+    position: absolute;
     width: 100%;
-    height: 50vmin;
+    height: 100%;
     object-fit: cover;
+    z-index: 1;
+}
+
+/* 3. Hero Content Overlay (Hidden by Default) */
+.home-hero-section-content {
+     height: 80vh;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    background-color: #00000080;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+/* 4. HOVER TRIGGER: Show Content on Video or Content Hover */
+
+
+.home-hero-video:hover ~ .home-hero-section-content,
+.home-hero-section-content:hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 5. Logo Image Styling */
+.home-hero-section-content-image {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.8));
+    user-select: none;
+}
+
+/* 6. Subtitle / Description Text */
+.home-hero-section-content-txt {
+    color: var(--lol-text);
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin: 0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+    line-height: 1.4;
+}
+
+/* 7. Gold "PLAY FOR FREE" Button */
+.home-hero-section-content-play-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--lol-gold);
+    color: var(--lol-bg);
+    font-size: 0.95rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    padding: 0.85rem 2.25rem;
+    box-shadow: 0 0 15px rgba(200, 170, 110, 0.4);
+    transition: all 0.25 ease;
+    cursor: pointer;
+    white-space: nowrap;
+    outline: 1px solid var(--lol-text);
+    outline-offset: 3px;
+}
+
+
+
+.home-hero-section-content-play-btn:hover {
+    background-color: var(--lol-gold-hover);
+    box-shadow: 0 0 25px rgba(200, 170, 110, 0.7);
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments for Mobile */
+@media (max-width: 768px) {
+    .home-hero-section-content{
+        visibility:visible;
+    }
+    .home-hero-section-content-image {
+        max-width: 260px;
+    }
+
+    .home-hero-section-content-txt {
+        font-size: 0.75rem;
+        letter-spacing: 0.8px;
+    }
+
+    .home-hero-section-content-play-btn {
+        padding: 0.65rem 1.75rem;
+        font-size: 0.75rem;
+    }
 }

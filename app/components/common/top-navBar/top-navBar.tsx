@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./top-navBar-style.css"
-import logoImg from "~/assets/image/logo.png"
+import logoImg from "~/assets/image/logo/logo.png"
 
 export default function TopNavBar() {
   const logInLink = "https://signup.na.leagueoflegends.com/en/?_gl=1*1jzcc9p*_gcl_au*MTQxNjExMzcwOS4xNzg0OTk0ODMz"

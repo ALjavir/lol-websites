@@ -1,6 +1,6 @@
 
 import './Footer.css';
-import logoImg from "~/assets/image/logo-1.png"
+import logoImg from "~/assets/image/logo/logo-1.png"
 export default function Footer() {
     const currentYear = new Date().getFullYear();
 
