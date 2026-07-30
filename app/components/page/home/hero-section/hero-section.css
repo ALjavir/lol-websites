@@ -4,14 +4,26 @@
 #home-hero-section {
     position: relative;
     width: 100%;
-    height: 80vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+   
+
 
 }
-
+#home-hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30vh; 
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.959)  100%);
+  pointer-events: none; 
+  z-index: 2;
+}
 /* 2. Fullscreen Video Background */
 .home-hero-video {
     position: absolute;
@@ -19,14 +31,15 @@
     height: 100%;
     object-fit: cover;
     z-index: 1;
+    border: 1px solid rgb(0, 0, 0);
 }
 
 /* 3. Hero Content Overlay (Hidden by Default) */
 .home-hero-section-content {
-     height: 80vh;
+     height: 100vh;
     width: 100%;
     position: relative;
-    z-index: 2;
+    z-index: 3;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,6 +50,7 @@
     opacity: 0;
     visibility: hidden;
     background-color: #00000080;
+   
     transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
@@ -54,7 +68,7 @@
     width: 100%;
     max-width: 480px;
     height: auto;
-    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.8));
+   
     user-select: none;
 }
 
@@ -67,7 +81,7 @@
     letter-spacing: 1.2px;
     text-transform: uppercase;
     margin: 0;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+   
     line-height: 1.4;
 }
 
@@ -84,7 +98,7 @@
     text-decoration: none;
     padding: 0.85rem 2.25rem;
     box-shadow: 0 0 15px rgba(200, 170, 110, 0.4);
-    transition: all 0.25 ease;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
     cursor: pointer;
     white-space: nowrap;
     outline: 1px solid var(--lol-text);
@@ -102,6 +116,7 @@
 /* Responsive adjustments for Mobile */
 @media (max-width: 768px) {
     .home-hero-section-content{
+        opacity: 1;
         visibility:visible;
     }
     .home-hero-section-content-image {

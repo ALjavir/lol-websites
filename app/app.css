@@ -5,8 +5,10 @@
   --lol-gold: #c8aa6e;
   --lol-gold-hover: #d4b87c;
   --lol-text: #f0e6d2;
-  --lol-muted: #a09b8c;
+  --lol-muted: #ffffffb2;
   --lol-border: #1e2328;
+  --lol-play-btn:linear-gradient(315deg, rgb(11, 196, 226) 0%, rgb(44, 140, 194) 100%);
+  --lol-play-btn-hover: rgb(11, 196, 226);
 
 }
 @theme {

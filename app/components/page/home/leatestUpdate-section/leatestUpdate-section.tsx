@@ -1,4 +1,5 @@
 import DateConverter from "~/components/common/converter/date";
+import "./leatestUpdate-section.css"
 
 interface LeatestUpdateSectionProps {
     //leatestPatch: any;
@@ -8,40 +9,32 @@ export default function HomeLeatestUpdateSection({ leatestNews }: LeatestUpdateS
     console.log(leatestNews)
     return (
         <section id="hm-let-upd-sec">
-            <div className="hm-let-upd-sec-pth">
-                <img src={leatestNews[0].imageMedia.url} alt="NO IMAGE FOUND" />
-                <div className="hm-let-upd-pth-cnt">
-                    <p className="hm-let-upd-pth-ver">
+
+            <div className="hm-news-card hm-news-hero-card">
+                <img className="hm-news-card-img hm-news-hero-card-img" src={leatestNews[0].imageMedia.url} alt="NO IMAGE FOUND" />
+                <div className="hm-news-card-overlay">
+                     <p className="hm-let-upd-pth-ver">
                         {leatestNews[0].category.title} | {DateConverter(leatestNews[0].publishedAt)}
                     </p>
-                    <h1 className="hm-let-upd-pth-title">
-                        {leatestNews[0].title}
-                    </h1>
-                    <p className="hm-let-upd-pth-subTitle">
-                        {leatestNews[0].description.body}
-                    </p>
-                    <a className="hm-let-upd-pth-redMor-btn" href="">READ MORE</a>
+                    <h1 className="hm-news-card-subtitle">{leatestNews[0].title}</h1>
+                    <p className="hm-news-card-title">{leatestNews[0].description.body}</p>
+                      <a className="play-btn">READ MORE</a>
                 </div>
             </div>
 
-            <div className="hm-let-upd-sec-new">
+
+            <div className="hm-news-grid-container">
                 {leatestNews.slice(1).map((item, index) => (
-                    <div key={index} className="hm-let-upd-new-crd">
-                        <p className="hm-let-upd-pth-ver">
+                    <div key={index} className="hm-news-card hm-news-grid-card">
+                        <img className="hm-news-card-img" src={item.imageMedia.url} alt={item.title || ""} />
+                        <div className="hm-news-card-overlay">
+                              <p className="hm-let-upd-pth-ver">
                             {item.category.title}
                         </p>
-
-                        <h1 className="hm-let-upd-news-title">
-                            {item.title}
-                        </h1>
-
-                        <p className="hm-let-upd-news-subTitle">
-                            {item.description.body}
-                        </p>
-
-                        <a className="hm-let-upd-pth-redMor-btn" href="">
-                            READ MORE
-                        </a>
+                            <h1 className="hm-news-card-subtitle">{item.title}</h1>
+                            <p className="hm-news-card-title"> {item.description.body}</p>
+                            <a className="play-btn">READ MORE</a>
+                        </div>
                     </div>
                 ))}
             </div>
