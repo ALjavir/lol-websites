@@ -29,7 +29,7 @@ export default function HomeLeatestUpdateSection({ leatestNews }: LeatestUpdateS
                         <img className="hm-news-card-img" src={item.imageMedia.url} alt={item.title || ""} />
                         <div className="hm-news-card-overlay">
                               <p className="hm-let-upd-pth-ver">
-                            {item.category.title}
+                            {item.category.title} | {DateConverter(item.publishedAt)}
                         </p>
                             <h1 className="hm-news-card-subtitle">{item.title}</h1>
                             <p className="hm-news-card-title"> {item.description.body}</p>

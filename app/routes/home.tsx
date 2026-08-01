@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {
   getLatestPatchVersion,
- // getAllPatchNote,
+  // getAllPatchNote,
   getLoLNews,
   getAllChampions,
   ddragonAssets
@@ -18,10 +18,8 @@ import HomeLeatestUpdateSection from '~/components/page/home/leatestUpdate-secti
 export default function Home() {
   const [patch, setPatch] = useState('');
   const heroVideo = 'https://assetcdn.rgpub.io/public/live/bundle-offload/8f6933b3-5b5c-4c1a-ad1a-c402ddd124b1/6a0cc3d3560da70008d3221f/gameplay-landing.webm'
-
-  //const [patchNotes, setpatchNotes] =  useState<any[]>([]);
-  const [lolNews, setlolNews] =  useState<any[]>([]);
-  const [champions, setChampions] =  useState<any[]>([]);
+  const [lolNews, setlolNews] = useState<any[]>([]);
+  const [champions, setChampions] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
 
@@ -33,19 +31,20 @@ export default function Home() {
 
         const [latestPatch, lolNewsData, allChamps] = await Promise.all([
           getLatestPatchVersion(),
-         // getAllPatchNote(),
           getLoLNews(),
           getAllChampions()
         ]);
 
         setPatch(latestPatch);
-        //setpatchNotes(patchNotesData);
-        setlolNews(lolNewsData );
-        setChampions(allChamps);
+        setlolNews([lolNewsData[0], lolNewsData[1], lolNewsData[2]]);
 
-        console.log(lolNewsData[0].title);
-        console.log(lolNewsData[1].title);
-        console.log(lolNewsData[2].title);
+        const championSelected = Math.floor(Math.random() * (allChamps.length + 1));
+        console.log(championSelected);
+        console.log(allChamps[championSelected]);
+        setChampions([allChamps[103]]);
+
+        console.log(champions);
+       
 
       } catch (error) {
         console.error('Failed to load initial Home data:', error);
@@ -66,7 +65,7 @@ export default function Home() {
   return (
     <main>
       <HomeHeroSection heroVideo={heroVideo} />
-      <HomeLeatestUpdateSection  leatestNews={[lolNews[0], lolNews[1], lolNews[2]]} />
+      <HomeLeatestUpdateSection leatestNews={lolNews} />
     </main>
   );
 }

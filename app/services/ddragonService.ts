@@ -76,7 +76,7 @@ export async function getAllChampions(): Promise<any[]> {
   if (cachedChampions) return cachedChampions;
 
   try {
-    const activeVersion = await getLatestPatchVersion(); // Ensures string resolution
+    const activeVersion = await getLatestPatchVersion(); 
     const res = await fetch(`${DDRAGON_BASE_URL}/cdn/${activeVersion}/data/${lang}/champion.json`);
     if (!res.ok) throw new Error('Failed to fetch champions');
     
