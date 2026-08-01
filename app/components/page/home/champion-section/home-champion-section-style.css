@@ -1,0 +1,241 @@
+.hm-featured-champions-container {
+    position: relative;
+    width: 100%;
+    min-height: 720px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hm-champion-bg {
+    position: absolute;
+    inset: 0;
+}
+
+.hm-camp-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(2px) brightness(.35);
+    transform: scale(1.08);
+}
+
+.hm-champion-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at center,
+            rgba(0, 0, 0, .15),
+            rgba(0, 0, 0, .72)),
+        linear-gradient(to right,
+            rgba(8, 8, 10, .92),
+            rgba(8, 8, 10, .25),
+            rgba(8, 8, 10, .92));
+}
+
+.hm-champion-info {
+    position: relative;
+    z-index: 2;
+
+    width: 88%;
+    max-width: 1500px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 5rem;
+}
+
+.hm-champion-info-txt {
+    max-width: 620px;
+}
+
+.hm-champion-name {
+    margin: 0;
+
+    font-size: 5rem;
+    color: #fff;
+
+    font-family: var(--lol-font-t);
+    font-style: italic;
+    font-weight: 700;
+}
+
+.hm-champion-title {
+    margin-top: .5rem;
+
+    color: var(--lol-gold);
+
+    font-size: 2rem;
+    font-family: var(--lol-font-p);
+    font-style: italic;
+}
+
+.hm-champion-desc {
+    margin-top: 2rem;
+
+    font-size: 1.15rem;
+    line-height: 2rem;
+
+    color: rgba(255, 255, 255, .82);
+}
+
+.hm-champion-info-diff-role {
+    display: flex;
+    gap: 4rem;
+
+    margin: 3rem 0;
+}
+
+.hm-champion-diff,
+.hm-champion-role {
+    position: relative;
+    padding-left: 1rem;
+}
+
+.hm-champion-diff::before,
+.hm-champion-role::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 2px;
+
+    width: 2px;
+    height: 45px;
+
+    background: var(--lol-gold-hover);
+}
+
+.hm-champion-role-label {
+    margin: 0 0 .75rem;
+
+    font-size: .7rem;
+    letter-spacing: .18rem;
+    color: var(--lol-gold-hover);
+}
+
+.hm-difficulty-bars {
+    display: flex;
+    gap: 4px;
+}
+
+.hm-difficulty-bar {
+    width: 14px;
+    height: 14px;
+
+    border: 1px solid var(--lol-gold);
+    background: transparent;
+}
+
+.hm-difficulty-bar.active {
+    background: var(--lol-gold);
+    border-color: var(--lol-gold);
+}
+
+.hm-champion-role-value {
+    margin: 0;
+
+    color: var(--lol-text);
+
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.hm-champion-img-border {
+     position: relative;
+    width: 650px;
+    height: 420px;
+
+    padding: 14px;
+
+    border: 1px solid var(--lol-gold);
+
+    background: rgba(0, 0, 0, .15);
+}
+
+.hm-champion-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.hm-champion-img:hover {
+    transform: scale(1.02);
+    
+}
+
+.hm-champion-skin-name {
+    position: absolute;
+    font-family: var(--lol-font-t);
+    font-style: italic;
+    font-size: 1.2rem;
+    bottom: 15px;
+    right: 15px;
+    color: var(--lol-gold);
+    background: var(--lol-bg);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.hm-champion-img-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hm-img-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    background: rgba(0, 0, 0, .45);
+    transition: .25s;
+    z-index: 10;
+}
+
+.hm-img-btn:hover {
+    background: #c8aa6e;
+    color: #000;
+}
+
+.hm-img-btn-left {
+    left: -60px;
+}
+
+.hm-img-btn-right {
+    right: -60px;
+}
+
+.hm-skin-indicators {
+    position: absolute;
+    bottom: -35px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #555;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.indicator.active {
+    background: #c8aa6e;
+    transform: scale(1.25);
+}

@@ -10,6 +10,10 @@
   --lol-play-btn:linear-gradient(315deg, rgb(11, 196, 226) 0%, rgb(44, 140, 194) 100%);
   --lol-play-btn-hover: rgb(11, 196, 226);
 
+  --lol-font-p: "EB Garamond", sans-serif;
+  --lol-font-s: "Space Grotesk", serif;
+  --lol-font-t: "Geist", serif;
+
 }
 @theme {
   
@@ -33,13 +37,6 @@ body {
   color: white;
 }
 
-h1 {
-  font-family: "Space Grotesk", serif;
-}
-
-h2{
-  font-family: "EB Garamond", serif;
-}
 
 /* =========================
    Geist

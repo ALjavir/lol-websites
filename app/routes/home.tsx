@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import letDivider from '~/assets/image/divider/latest-divider-icon.png';
+import champDivider from '~/assets/image/divider/icon_champion.png';
 import {
   getLatestPatchVersion,
   // getAllPatchNote,
   getLoLNews,
   getAllChampions,
-  ddragonAssets
+  ddragonAssets,
+  getChampionDetails
 } from "../services/ddragonService";
 
 import {
@@ -14,12 +17,15 @@ import {
 
 import HomeHeroSection from '~/components/page/home/hero-section/hero-section';
 import HomeLeatestUpdateSection from '~/components/page/home/leatestUpdate-section/leatestUpdate-section';
+import Divider from '~/components/common/divider/divider';
+import HomeChampionSection from '~/components/page/home/champion-section/home-champion-section';
+import Loading from '~/components/common/loading/loading';
 
 export default function Home() {
   const [patch, setPatch] = useState('');
   const heroVideo = 'https://assetcdn.rgpub.io/public/live/bundle-offload/8f6933b3-5b5c-4c1a-ad1a-c402ddd124b1/6a0cc3d3560da70008d3221f/gameplay-landing.webm'
   const [lolNews, setlolNews] = useState<any[]>([]);
-  const [champions, setChampions] = useState<any[]>([]);
+  const [champions, setChampions] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
 
@@ -38,13 +44,30 @@ export default function Home() {
         setPatch(latestPatch);
         setlolNews([lolNewsData[0], lolNewsData[1], lolNewsData[2]]);
 
-        const championSelected = Math.floor(Math.random() * (allChamps.length + 1));
-        console.log(championSelected);
-        console.log(allChamps[championSelected]);
-        setChampions([allChamps[103]]);
+        const bestChampions = [
+          "Ahri",
+          "Sivir",
+          "Jinx",
+          "Kai'Sa",
+          "Miss Fortune",
+          "Akali",
+          "Katarina",
+          "Ashe",
+          "Seraphine",
+          "Morgana"
+        ];
 
-        console.log(champions);
-       
+        const championSelected = Math.floor(Math.random() * bestChampions.length);
+
+        const champData = allChamps.find(
+          (champ: any) => champ.name === bestChampions[championSelected]
+        );
+
+        if (champData) {
+          const champion = await getChampionDetails(champData.id);
+          setChampions(champion);
+        }
+        
 
       } catch (error) {
         console.error('Failed to load initial Home data:', error);
@@ -57,15 +80,22 @@ export default function Home() {
   }, []);
   if (loading) {
     return (
-      <div style={{ padding: '50px', color: '#fff', textAlign: 'center' }}>
-        Loading League Universe...
-      </div>
+      <Loading loading={loading} fullScreen />
     );
   }
   return (
     <main>
       <HomeHeroSection heroVideo={heroVideo} />
+      <Divider
+        icon={letDivider}
+        text="LATEST UPDATES"
+      />
       <HomeLeatestUpdateSection leatestNews={lolNews} />
+      <Divider
+        icon={champDivider}
+        text="FEATURED CHAMPIONS"
+      />
+      <HomeChampionSection featuredChampions={champions} />
     </main>
   );
 }

@@ -1,5 +1,6 @@
 import DateConverter from "~/components/common/converter/date";
 import "./leatestUpdate-section.css"
+import ButtonBlue from "~/components/common/button/button";
 
 interface LeatestUpdateSectionProps {
     //leatestPatch: any;
@@ -18,7 +19,7 @@ export default function HomeLeatestUpdateSection({ leatestNews }: LeatestUpdateS
                     </p>
                     <h1 className="hm-news-card-subtitle">{leatestNews[0].title}</h1>
                     <p className="hm-news-card-title">{leatestNews[0].description.body}</p>
-                      <a className="play-btn">READ MORE</a>
+                     <ButtonBlue link="{item.url}" text="READ MORE" />
                 </div>
             </div>
 
@@ -33,7 +34,7 @@ export default function HomeLeatestUpdateSection({ leatestNews }: LeatestUpdateS
                         </p>
                             <h1 className="hm-news-card-subtitle">{item.title}</h1>
                             <p className="hm-news-card-title"> {item.description.body}</p>
-                            <a className="play-btn">READ MORE</a>
+                            <ButtonBlue link={item.url} text="READ MORE" />
                         </div>
                     </div>
                 ))}

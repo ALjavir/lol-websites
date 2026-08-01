@@ -74,6 +74,7 @@
 
 /* 6. Subtitle / Description Text */
 .home-hero-section-content-txt {
+    font-family: var(--lol-font-s);
     color: var(--lol-text);
     font-size: 1.2rem;
     font-weight: 700;

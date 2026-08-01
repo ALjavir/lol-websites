@@ -136,3 +136,12 @@ export const ddragonAssets = {
   getSplashArt: (championId: string, skinNum = 0) => `${DDRAGON_BASE_URL}/cdn/img/champion/splash/${championId}_${skinNum}.jpg`,
   getLoadingCard: (championId: string, skinNum = 0) => `${DDRAGON_BASE_URL}/cdn/img/champion/loading/${championId}_${skinNum}.jpg`,
 };
+
+
+export function getValidSplashArts(championData: any, maxImages = 5): string[] {
+  if (!championData || !championData.skins) return [];
+  const validSkins = championData.skins.slice(0, maxImages);
+  return validSkins.map((skin: any) => {
+    return `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championData.id}_${skin.num}.jpg`;
+  });
+}
