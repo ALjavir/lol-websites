@@ -1,11 +1,12 @@
 .hm-featured-champions-container {
     position: relative;
     width: 100%;
-    min-height: 720px;
+    min-height: 780px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 0 16px 14px rgba(0, 0, 0, .4);
 }
 
 .hm-champion-bg {
@@ -15,23 +16,17 @@
 
 .hm-camp-bg-img {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     object-fit: cover;
-    filter: blur(2px) brightness(.35);
-    transform: scale(1.08);
+    /* filter: blur(2px) brightness(.35);
+    transform: scale(1.08); */
 }
 
 .hm-champion-overlay {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(circle at center,
-            rgba(0, 0, 0, .15),
-            rgba(0, 0, 0, .72)),
-        linear-gradient(to right,
-            rgba(8, 8, 10, .92),
-            rgba(8, 8, 10, .25),
-            rgba(8, 8, 10, .92));
+        linear-gradient(to bottom, rgba(7, 10, 18, .95), rgba(7, 10, 18, .55), rgba(7, 10, 18, .95));
 }
 
 .hm-champion-info {
@@ -45,11 +40,11 @@
     justify-content: space-between;
     align-items: center;
 
-    gap: 5rem;
+    gap: 10rem;
 }
 
 .hm-champion-info-txt {
-    max-width: 620px;
+    max-width: 580px;
 }
 
 .hm-champion-name {
@@ -76,10 +71,10 @@
 .hm-champion-desc {
     margin-top: 2rem;
 
-    font-size: 1.15rem;
+    font-size: 1rem;
     line-height: 2rem;
 
-    color: rgba(255, 255, 255, .82);
+    color: var(--lol-muted);
 }
 
 .hm-champion-info-diff-role {
@@ -145,11 +140,17 @@
     text-transform: uppercase;
 }
 
-.hm-champion-img-border {
-     position: relative;
-    width: 650px;
-    height: 420px;
+.hm-champ-read-btn{
+    display: flex;
+    justify-content: flex-end;
+}
 
+.hm-champion-img-border {
+    
+     position: relative;
+    width: 720px;
+    /* height: 420px; */
+    width: min(1400px, 100%);
     padding: 14px;
 
     border: 1px solid var(--lol-gold);
@@ -158,11 +159,13 @@
 }
 
 .hm-champion-img {
+    border-radius: 5px;
     width: 100%;
     height: 100%;
     object-fit: cover;
     
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 0 16px 14px rgba(0, 0, 0, .4);
 }
 .hm-champion-img:hover {
     transform: scale(1.02);
@@ -174,13 +177,19 @@
     font-family: var(--lol-font-t);
     font-style: italic;
     font-size: 1.2rem;
-    bottom: 15px;
-    right: 15px;
+    bottom: 18px;
+    right: 18px;
     color: var(--lol-gold);
     background: var(--lol-bg);
     padding: 5px 10px;
     border-radius: 5px;
+    opacity: 0;
 }
+
+.hm-champion-img-border:hover .hm-champion-skin-name {
+    opacity: 1;
+}
+
 
 .hm-champion-img-wrapper {
     position: relative;
@@ -205,8 +214,8 @@
 }
 
 .hm-img-btn:hover {
-    background: #c8aa6e;
-    color: #000;
+    background: var(--lol-gold);
+    color: var(--lol-bg);
 }
 
 .hm-img-btn-left {
@@ -230,12 +239,86 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #555;
+    background:rgb(61 61 61);
     cursor: pointer;
     transition: .25s;
 }
 
 .indicator.active {
-    background: #c8aa6e;
+    background: var(--lol-gold);
     transform: scale(1.25);
+}
+
+@media (max-width: 1024px) {
+   .hm-champion-info {
+    padding:80px 0;
+        flex-direction: column;
+   }
+   .hm-camp-bg-img{
+height: 100%;
+   }
+
+   .hm-champion-img-border {
+    order: 1;
+   }
+
+   .hm-champion-info-txt{
+    order: 2;
+   }
+}
+
+@media (max-width: 768px) {
+   .hm-champion-info {
+    padding:80px 0;
+        flex-direction: column;
+   }
+   .hm-camp-bg-img{
+height: 100%;
+   }
+
+   .hm-champion-img-border {
+    padding: 10px;
+     /* width: 360px; */
+    height: auto;
+    order: 1;
+   }
+   .hm-champion-skin-name{
+    font-size: 0.6rem;
+    opacity: 1;
+   }
+   .hm-img-btn-left {
+    left: -20px;
+   }
+   .hm-img-btn-right {
+    right: -20px;
+   }
+   .hm-img-btn {
+    border-radius: 30px;
+    width: 34px;
+    height: 34px;
+    color: black;
+    background-color: var(--lol-gold);
+   }
+
+   .hm-champion-info{
+    gap: 5rem;
+   }
+   .hm-champion-info-txt{
+    order: 2;
+   }
+   .hm-champion-name{
+    font-size: 3rem;
+    bottom: 14px;
+    right: 14px;
+   }
+   .hm-champion-title{
+    margin-top: 0px;
+    font-size: 1.8rem;
+   }
+   .hm-champion-info-diff-role{
+    flex-direction: column;
+    gap: 2rem;
+   }
+
+    
 }

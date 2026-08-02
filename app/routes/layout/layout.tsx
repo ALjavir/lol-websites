@@ -1,8 +1,9 @@
 import Footer from "~/components/common/footer/Footer";
-import type { Route } from "../+types/root";
+import type { Route } from "../../+types/root";
 import TopNavBar from "~/components/common/top-navBar/top-navBar";
 import { Outlet } from "react-router";
 import "./layout.css"
+
 export function meta({ }: Route.MetaArgs) {
     return [
         { title: "Leauge Of Legends | Javir" },
@@ -11,6 +12,7 @@ export function meta({ }: Route.MetaArgs) {
 }
 
 export default function MainLayout() {
+    
     return (
         <div className="main-layout-container">
            <TopNavBar/>

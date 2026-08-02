@@ -7,9 +7,9 @@ import {
 } from "@react-router/dev/routes";
 
 export default [
-  layout("./routes/layout.tsx", [
-    index("./routes/home.tsx"),
-   
+  layout("./routes/layout/layout.tsx", [
+    index("./routes/home/home.tsx"),
+
     // ...prefix("shop", [
     //   index("./routes/shop/index.tsx"),
     //   route(":id", "./routes/shop/product-details.tsx"),

@@ -1,31 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import letDivider from '~/assets/image/divider/latest-divider-icon.png';
 import champDivider from '~/assets/image/divider/icon_champion.png';
+import mapDivider from '~/assets/image/divider/featured-battlefield.png';
+import "./home-style.css";
 import {
   getLatestPatchVersion,
-  // getAllPatchNote,
   getLoLNews,
   getAllChampions,
-  ddragonAssets,
   getChampionDetails
-} from "../services/ddragonService";
+} from "../../services/ddragonService";
 
 import {
-  getUniverseChampionData,
-  getAbilityVideoUrl
-} from "../services/universeService";
+  getAllRegionsData
+} from "../../services/universeService";
 
 import HomeHeroSection from '~/components/page/home/hero-section/hero-section';
 import HomeLeatestUpdateSection from '~/components/page/home/leatestUpdate-section/leatestUpdate-section';
 import Divider from '~/components/common/divider/divider';
 import HomeChampionSection from '~/components/page/home/champion-section/home-champion-section';
 import Loading from '~/components/common/loading/loading';
+import HomeMapSection from '~/components/page/home/map-section/home-map-section';
 
 export default function Home() {
-  const [patch, setPatch] = useState('');
+
   const heroVideo = 'https://assetcdn.rgpub.io/public/live/bundle-offload/8f6933b3-5b5c-4c1a-ad1a-c402ddd124b1/6a0cc3d3560da70008d3221f/gameplay-landing.webm'
   const [lolNews, setlolNews] = useState<any[]>([]);
   const [champions, setChampions] = useState<any>(null);
+  const [regions, setRegions] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
 
@@ -35,15 +36,14 @@ export default function Home() {
         setLoading(true);
 
 
-        const [latestPatch, lolNewsData, allChamps] = await Promise.all([
+        const [latestPatch, lolNewsData, allChamps, allRegions] = await Promise.all([
           getLatestPatchVersion(),
           getLoLNews(),
-          getAllChampions()
+          getAllChampions(),
+         getAllRegionsData()
         ]);
-
-        setPatch(latestPatch);
+      
         setlolNews([lolNewsData[0], lolNewsData[1], lolNewsData[2]]);
-
         const bestChampions = [
           "Ahri",
           "Sivir",
@@ -56,18 +56,22 @@ export default function Home() {
           "Seraphine",
           "Morgana"
         ];
-
         const championSelected = Math.floor(Math.random() * bestChampions.length);
-
         const champData = allChamps.find(
           (champ: any) => champ.name === bestChampions[championSelected]
         );
-
         if (champData) {
           const champion = await getChampionDetails(champData.id);
           setChampions(champion);
         }
-        
+
+         if (allRegions.length > 5) {
+         setRegions(allRegions.slice(5)); 
+         }
+         else {
+          setRegions(allRegions);
+        }
+    
 
       } catch (error) {
         console.error('Failed to load initial Home data:', error);
@@ -86,6 +90,9 @@ export default function Home() {
   return (
     <main>
       <HomeHeroSection heroVideo={heroVideo} />
+
+      <div className="hm-background" />
+
       <Divider
         icon={letDivider}
         text="LATEST UPDATES"
@@ -96,6 +103,11 @@ export default function Home() {
         text="FEATURED CHAMPIONS"
       />
       <HomeChampionSection featuredChampions={champions} />
+         <Divider
+        icon={mapDivider}
+        text="FEATURED REGION"
+      />
+      <HomeMapSection region={regions}/>
     </main>
   );
 }

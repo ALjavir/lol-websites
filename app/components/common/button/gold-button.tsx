@@ -1,14 +1,15 @@
-import "./button-style.css";
-interface ButtonBlueProps {
+import"./button-style.css"
+
+interface ButtonGoldProps {
     link: string;
     text: string;
 }
 
 
-export default function ButtonBlue({ link, text }: ButtonBlueProps) {
+export default function ButtonGold({ link, text }: ButtonGoldProps) {
     return (
         <a
-          className="ButtonBlue-btn"
+          className="ButtonGold-btn"
           href={link}
           target="_blank"
           rel="noopener noreferrer"

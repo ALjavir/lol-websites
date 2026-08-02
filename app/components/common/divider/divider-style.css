@@ -56,3 +56,17 @@
     white-space: nowrap;
     margin: 0;
 }
+
+@media (max-width: 768px) {
+    .divider-icon {
+    width: 56px;
+    height: 56px;}
+.divider-icon img {
+    width: 26px;
+    height: 26px;}
+
+.divider-text{
+    font-size: 1rem;
+}
+
+}

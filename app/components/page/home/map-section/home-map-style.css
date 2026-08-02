@@ -1,0 +1,242 @@
+/* Section */
+
+#hm-map-sec {
+ box-shadow: 0 0 16px 14px rgba(0, 0, 0, .4);
+    position: relative;
+
+    padding: 180px 0;
+
+    overflow: hidden;
+}
+
+/* Background */
+
+.hm-map-bg {
+
+    position: absolute;
+    inset: 0;
+}
+
+.hm-map-bg img {
+
+    width: 100%;
+
+
+    object-fit: cover;
+
+
+
+}
+
+/* Dark Overlay */
+
+.hm-map-bg::after {
+
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(to bottom,
+            rgba(7, 10, 18, .95),
+            rgba(7, 10, 18, .55),
+            rgba(7, 10, 18, .95));
+}
+
+/* Layout */
+
+.hm-map-container {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1400px, 90%);
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+/* Image */
+
+.hm-map-image-card {
+
+    position: relative;
+padding: 14px;
+
+    border: 1px solid var(--lol-gold);
+
+    background: rgba(0, 0, 0, .15);
+    flex: 1;
+}
+
+.hm-map-img {
+    border-radius: 5px;
+    width: 100%;
+
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 0 16px 14px rgba(0, 0, 0, .4);
+}
+.hm-map-img:hover{
+    transform: scale(1.02);
+}
+
+/* Navigation */
+
+.hm-map-arrow {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+
+    background: rgba(0, 0, 0, .65);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 24px;
+
+    transition: .3s;
+}
+
+.hm-map-arrow:hover {
+
+    background: var(--lol-gold);
+
+    color: black;
+}
+
+.left {
+
+    left: 25px;
+}
+
+.right {
+
+    right: 25px;
+}
+
+/* Info */
+
+.hm-map-info {
+
+    max-width: 450px;
+}
+
+.hm-region-tag {
+
+    color: var(--lol-gold);
+
+    letter-spacing: 3px;
+
+    font-size: 13px;
+}
+
+.hm-map-info h1 {
+
+    margin: 20px 0;
+
+    font-size: 70px;
+
+    color: white;
+
+    font-family: "EB Garamond";
+}
+
+.hm-map-info p {
+     overflow: hidden;
+  display: -webkit-box;
+
+  -webkit-line-clamp: 7;
+  
+  -webkit-box-orient: vertical;
+        font-size: 1rem;
+    line-height: 2rem;
+
+    color: var(--lol-muted);
+
+    margin-bottom: 35px;
+}
+
+/* Button */
+
+.hm-map-btn {
+
+    padding: 18px 34px;
+
+    border: 1px solid var(--lol-gold);
+
+    background: transparent;
+
+    color: var(--lol-gold);
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.hm-map-btn:hover {
+
+    background: var(--lol-gold);
+
+    color: black;
+}
+
+@media (max-width: 768px) {
+    #hm-map-sec {
+        padding: 0px 0;
+    }
+   .hm-map-container  {
+    padding:80px 0;
+        flex-direction: column;
+   }
+
+   .hm-map-bg img{
+    height: 100%;
+   }
+
+   .hm-champion-img-border {
+    padding: 10px;
+     /* width: 360px; */
+    height: auto;
+    order: 1;
+   }
+   .hm-map-info h1{
+    margin: 0;
+   }
+   .hm-map-image-card{
+    padding: 10px;
+   }
+   .hm-map-arrow {
+    border-radius: 30px;
+        width: 34px;
+        height: 34px;
+        color: black;
+        background-color: var(--lol-gold);
+    z-index: 3;
+    top: 20%;
+    transform: translateY(0%);
+   }
+   .right{
+    right: 5px;
+   }
+   .left{
+    left: 5px;
+   }
+
+}

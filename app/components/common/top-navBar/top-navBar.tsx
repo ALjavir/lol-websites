@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import "./top-navBar-style.css"
 import logoImg from "~/assets/image/logo/logo.png"
-import ButtonBlue from '../button/button';
+import ButtonBlue from '../button/blue-button';
+
 
 export default function TopNavBar() {
   const logInLink = "https://signup.na.leagueoflegends.com/en/?_gl=1*1jzcc9p*_gcl_au*MTQxNjExMzcwOS4xNzg0OTk0ODMz"
@@ -35,7 +36,7 @@ export default function TopNavBar() {
 
       <div className="nav-actions">
 
-        <ButtonBlue link={logInLink} text="PLAY NOW" />
+        <ButtonBlue link={logInLink} text="PLAY NOW" showBig={false}/>
         <button
           className="mobile-menu-btn"
           onClick={toggleMobileMenu}

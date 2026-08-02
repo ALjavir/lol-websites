@@ -1,8 +1,11 @@
 import { ddragonAssets } from "~/services/ddragonService";
 import "./home-champion-section-style.css";
-import ButtonBlue from "~/components/common/button/button";
+
 import { useEffect, useState } from "react";
 import Loading from "~/components/common/loading/loading";
+import ButtonBlue from "~/components/common/button/blue-button";
+import MediaViewer from "~/components/common/MediaViewer/MediaViewer";
+import MediaPopup from "~/components/common/MediaViewer/MediaViewer";
 
 interface HomeChampionSectionProps {
     featuredChampions: any;
@@ -14,35 +17,26 @@ export default function HomeChampionSection({ featuredChampions }: HomeChampionS
         (skin: any) => skin.parentSkin === undefined
     );
 
-    const currentSkin = realSkins[currentIndex];
+    let indicatorList = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
+    const currentSkin = realSkins[currentIndex]
+    let MAX_SKIN = 8;
 
-    const [imageError, setImageError] = useState(false);
-    const MAX_SKIN = 8;
+    if (realSkins.length-1 < 8) {
+        indicatorList = Array.from({ length: realSkins.length }, (_, i) => i);
+        MAX_SKIN = realSkins.length-1;
+    }
     useEffect(() => {
+       
         setLoading(true);
-        setImageError(false);
+       
     }, [featuredChampions.id, currentSkin]);
 
-
-
-
     const previousSkin = () => {
-        try {
-             setCurrentIndex(prev => (prev === 0 ? MAX_SKIN : prev - 1));
-        } catch (error) {
-           setCurrentIndex(0);
-        }
-       
+        setCurrentIndex(prev => (prev === 0 ? MAX_SKIN : prev - 1));
     };
-
     const nextSkin = () => {
-        try {
-            setCurrentIndex(prev => (prev === MAX_SKIN ? 0 : prev + 1));
-        } catch (error) {
-            setCurrentIndex(MAX_SKIN);
-        }
-        
+        setCurrentIndex(prev => (prev === MAX_SKIN ? 0 : prev + 1));
     };
 
     return (
@@ -102,7 +96,11 @@ export default function HomeChampionSection({ featuredChampions }: HomeChampionS
                             </div>
 
                         </div>
-                        <ButtonBlue link='' text="LEARN MORE" />
+                        <div className="hm-champ-read-btn">
+
+                            <ButtonBlue link='' text="LEARN MORE" showBig={true} />
+                        </div>
+                        
                     </div>
 
                     <div className="hm-champion-img-wrapper">
@@ -116,13 +114,9 @@ export default function HomeChampionSection({ featuredChampions }: HomeChampionS
 
                         <div className="hm-champion-img-border">
                             {loading && <Loading loading={true} />}
-                            {imageError && (
-                                <div className="hm-image-error">
-                                    <h3>No Splash Art</h3>
-                                    <p>This skin doesn't have a splash image.</p>
-                                </div>
-                            )}
-                            <img
+                          <MediaPopup
+    children={
+        <img
                                 className="hm-champion-img"
                                 src={ddragonAssets.getSplashArt(
                                     featuredChampions.id,
@@ -134,8 +128,15 @@ export default function HomeChampionSection({ featuredChampions }: HomeChampionS
 
                                     setLoading(false);
                                 }}
+                                onError={() => {
+                                    setCurrentIndex(0);
+                                }}
                                 style={{ opacity: loading ? 0 : 1 }}
                             />
+    }
+>
+   
+</MediaPopup>
                             <h1 className="hm-champion-skin-name">{currentSkin.name}</h1>
                         </div>
 
@@ -147,7 +148,7 @@ export default function HomeChampionSection({ featuredChampions }: HomeChampionS
                         </button>
 
                         <div className="hm-skin-indicators">
-                            {[0, 1, 2, 3, 4, 5, 6, 7, 8].map(index => (
+                            {indicatorList.map(index => (
                                 <span
                                     key={index}
                                     className={
@@ -155,7 +156,7 @@ export default function HomeChampionSection({ featuredChampions }: HomeChampionS
                                             ? "indicator active"
                                             : "indicator"
                                     }
-                                    onClick={() => setCurrentIndex(index)}
+                                    onClick={() => index < MAX_SKIN ? setCurrentIndex(index) : setCurrentIndex(0)}
                                 />
                             ))}
                         </div>
