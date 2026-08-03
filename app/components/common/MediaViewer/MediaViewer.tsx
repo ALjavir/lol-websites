@@ -1,44 +1,39 @@
 import { type ReactNode, useEffect, useState } from "react";
 import "./media-viewer-style.css";
-
+import zoomBtn from '~/assets/image/icon/zoom.svg';
 
 
 interface MediaPopupProps {
     children: ReactNode;
+    loading?: boolean;
+    name: string
+    popupContent?: React.ReactNode;
 
 }
 
 export default function MediaPopup({
     children,
-
+    loading = false,
+    name,
+   popupContent,
 }: MediaPopupProps) {
     const [open, setOpen] = useState(false);
 
     useEffect(() => {
-        if (!open) return;
+        if (open) {
+            document.documentElement.style.overflow = "hidden";
+            document.body.style.overflow = "hidden";
 
-        const scrollY = window.scrollY;
-
-        document.body.style.position = "fixed";
-        document.body.style.top = `-${scrollY}px`;
-        document.body.style.left = "0";
-        document.body.style.right = "0";
-        document.body.style.width = "100%";
-        document.body.style.overflow = "hidden";
-
-        return () => {
-            document.body.style.position = "";
-            document.body.style.top = "";
-            document.body.style.left = "";
-            document.body.style.right = "";
-            document.body.style.width = "";
+            // Hide the entire page
+            document.body.classList.add("media-open");
+        } else {
+            document.documentElement.style.overflow = "";
             document.body.style.overflow = "";
-
-            window.scrollTo(0, scrollY);
-        };
+            document.body.classList.remove("media-open");
+        }
     }, [open]);
 
-return (
+  return (
         <>
             <div
                 className="mv-preview"
@@ -47,7 +42,7 @@ return (
                 {children}
 
                 <div className="mv-overlay">
-                    ⛶
+                    <img className="zoom-btn-img" src={zoomBtn} />
                 </div>
             </div>
 
@@ -67,7 +62,7 @@ return (
                             ✕
                         </button>
 
-                        {children}
+                        {popupContent ?? children}
                     </div>
                 </div>
             )}

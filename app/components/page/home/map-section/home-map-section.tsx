@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import Loading from "~/components/common/loading/loading";
 import "./home-map-style.css";
 import ButtonBlue from "~/components/common/button/blue-button";
+import MediaPopup from "~/components/common/MediaViewer/MediaViewer";
 
 interface HomeMapSectionProps {
     region: any[];
 }
 export default function HomeMapSection({ region }: HomeMapSectionProps) {
-    const [loading, setLoading] = useState(true);
-    console.log(region)
+    // const [loading, setLoading] = useState(true);
+
     const [currentIndex, setCurrentIndex] = useState(0);
     let indicatorList: number[] = []
     const shortDescription =
@@ -17,7 +18,7 @@ export default function HomeMapSection({ region }: HomeMapSectionProps) {
         ?? region[currentIndex].faction.overview.short.replace(/<[^>]*>/g, "");
     indicatorList = Array.from({ length: region.length }, (_, i) => i);
     useEffect(() => {
-        setLoading(true);
+        // setLoading(true);
 
     }, [region]);
     const previousSkin = () => {
@@ -41,6 +42,11 @@ export default function HomeMapSection({ region }: HomeMapSectionProps) {
             >
                 ❮
             </button>
+            <div className="hm-show-index">
+                <h1 className="hm-current-index">{currentIndex + 1}</h1>
+                <span>/</span>
+                <h1 className="hm-total-index">{region.length}</h1>
+            </div>
             <button
                 className="hm-map-arrow right"
                 onClick={nextSkin}
@@ -48,16 +54,22 @@ export default function HomeMapSection({ region }: HomeMapSectionProps) {
                 ❯
             </button>
             <div className="hm-map-container">
-                <div className="hm-map-image-card">
-                    {loading && <Loading loading={true} />}
-                    <img
-                        className="hm-map-img"
-                        src={region[currentIndex].faction.image.uri}
-                        alt={region[currentIndex].faction.name}
-                        onLoad={() => setLoading(false)}
-                        style={{ opacity: loading ? 0 : 1 }}
-                    />
 
+                <div className="hm-map-image-card">
+
+
+                    {/* {loading && <Loading loading={true} />} */}
+                    <MediaPopup
+                        name={region[currentIndex].faction.name}
+                        children={
+                            <img
+                                className="hm-map-img"
+                                src={region[currentIndex].faction.image.uri}
+                                alt={region[currentIndex].faction.name}
+                            // onLoad={() => setLoading(false)}
+                            // style={{ opacity: loading ? 0 : 1 }}
+                            />
+                        } />
 
 
                 </div>
@@ -72,9 +84,10 @@ export default function HomeMapSection({ region }: HomeMapSectionProps) {
                     <p className="hm-map-desc">
                         {shortDescription}
                     </p>
-                   <ButtonBlue link={""} text={"LEARN MORE"}  showBig={true} />             </div>
+                    <ButtonBlue link={""} text={"LEARN MORE"} showBig={true} />             </div>
 
             </div>
+
 
         </section>
     );

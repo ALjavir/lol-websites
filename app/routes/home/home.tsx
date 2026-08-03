@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import letDivider from '~/assets/image/divider/latest-divider-icon.png';
 import champDivider from '~/assets/image/divider/icon_champion.png';
 import mapDivider from '~/assets/image/divider/featured-battlefield.png';
+import videoDivider from '~/assets/image/divider/video-icon.png';
+
 import "./home-style.css";
 import {
   getLatestPatchVersion,
@@ -14,12 +16,17 @@ import {
   getAllRegionsData
 } from "../../services/universeService";
 
+import { getLoLYouTubeVideos, type YouTubeVideo } from "../../services/youTube"
+
 import HomeHeroSection from '~/components/page/home/hero-section/hero-section';
 import HomeLeatestUpdateSection from '~/components/page/home/leatestUpdate-section/leatestUpdate-section';
 import Divider from '~/components/common/divider/divider';
 import HomeChampionSection from '~/components/page/home/champion-section/home-champion-section';
 import Loading from '~/components/common/loading/loading';
 import HomeMapSection from '~/components/page/home/map-section/home-map-section';
+import HomeYTVideoSection from '~/components/page/home/ytVideo-section/home-ytVideo-section';
+
+
 
 export default function Home() {
 
@@ -27,6 +34,7 @@ export default function Home() {
   const [lolNews, setlolNews] = useState<any[]>([]);
   const [champions, setChampions] = useState<any>(null);
   const [regions, setRegions] = useState<any[]>([]);
+  const [videoYT, setVideoYT] = useState<YouTubeVideo[]>([]);
   const [loading, setLoading] = useState(true);
 
 
@@ -36,13 +44,16 @@ export default function Home() {
         setLoading(true);
 
 
-        const [latestPatch, lolNewsData, allChamps, allRegions] = await Promise.all([
+        const [latestPatch, lolNewsData, allChamps, allRegions, videoDataYT] = await Promise.all([
           getLatestPatchVersion(),
           getLoLNews(),
           getAllChampions(),
-         getAllRegionsData()
+          getAllRegionsData(),
+          getLoLYouTubeVideos()
         ]);
-      
+
+        // const videoDataYT = await getLoLYouTubeVideos()
+
         setlolNews([lolNewsData[0], lolNewsData[1], lolNewsData[2]]);
         const bestChampions = [
           "Ahri",
@@ -65,13 +76,15 @@ export default function Home() {
           setChampions(champion);
         }
 
-         if (allRegions.length > 5) {
-         setRegions(allRegions.slice(5)); 
-         }
-         else {
+        if (allRegions.length > 5) {
+          setRegions(allRegions.slice(5));
+        }
+        else {
           setRegions(allRegions);
         }
-    
+
+        console.log(setVideoYT(videoDataYT))
+
 
       } catch (error) {
         console.error('Failed to load initial Home data:', error);
@@ -103,11 +116,16 @@ export default function Home() {
         text="FEATURED CHAMPIONS"
       />
       <HomeChampionSection featuredChampions={champions} />
-         <Divider
+      <Divider
         icon={mapDivider}
         text="FEATURED REGION"
       />
-      <HomeMapSection region={regions}/>
+      <HomeMapSection region={regions} />
+      <Divider
+        icon={videoDivider}
+        text="ICONIC VIDEO"
+      />
+      <HomeYTVideoSection ytVideo={videoYT} />
     </main>
   );
 }

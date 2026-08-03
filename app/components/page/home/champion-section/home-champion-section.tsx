@@ -22,14 +22,14 @@ export default function HomeChampionSection({ featuredChampions }: HomeChampionS
     const currentSkin = realSkins[currentIndex]
     let MAX_SKIN = 8;
 
-    if (realSkins.length-1 < 8) {
+    if (realSkins.length - 1 < 8) {
         indicatorList = Array.from({ length: realSkins.length }, (_, i) => i);
-        MAX_SKIN = realSkins.length-1;
+        MAX_SKIN = realSkins.length - 1;
     }
     useEffect(() => {
-       
+
         setLoading(true);
-       
+
     }, [featuredChampions.id, currentSkin]);
 
     const previousSkin = () => {
@@ -100,7 +100,7 @@ export default function HomeChampionSection({ featuredChampions }: HomeChampionS
 
                             <ButtonBlue link='' text="LEARN MORE" showBig={true} />
                         </div>
-                        
+
                     </div>
 
                     <div className="hm-champion-img-wrapper">
@@ -113,30 +113,32 @@ export default function HomeChampionSection({ featuredChampions }: HomeChampionS
                         </button>
 
                         <div className="hm-champion-img-border">
-                            {loading && <Loading loading={true} />}
-                          <MediaPopup
-    children={
-        <img
-                                className="hm-champion-img"
-                                src={ddragonAssets.getSplashArt(
-                                    featuredChampions.id,
-                                    currentSkin.num
-                                )}
+                            {/* {loading && <Loading loading={true} />} */}
+                            <MediaPopup
+                                name={currentSkin.name}
+                                children={
+                                    <img
+                                        className="hm-champion-img"
+                                        src={ddragonAssets.getSplashArt(
+                                            featuredChampions.id,
+                                            currentSkin.num
+                                        )}
+                                        alt={featuredChampions.name}
+                                        onLoad={() => {
+                                            
+                                    
+                                        setLoading(false);
+                                        }}
+                                        onError={() => {
+                                            setCurrentIndex(0);
+                                        }}
+                                        style={{ opacity: loading ? 0 : 1 }}
+                                    />
+                                }
+                              
+                            >
 
-                                alt={featuredChampions.name}
-                                onLoad={() => {
-
-                                    setLoading(false);
-                                }}
-                                onError={() => {
-                                    setCurrentIndex(0);
-                                }}
-                                style={{ opacity: loading ? 0 : 1 }}
-                            />
-    }
->
-   
-</MediaPopup>
+                            </MediaPopup>
                             <h1 className="hm-champion-skin-name">{currentSkin.name}</h1>
                         </div>
 
