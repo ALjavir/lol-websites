@@ -73,18 +73,15 @@
 .hm-map-image-card {
 transition:.45s;
     position: relative;
-    padding: 14px;
+    overflow: hidden; 
 
-    border: 1px solid var(--lol-gold);
-
+    border: 2px solid var(--lol-gold);
+ box-shadow: 0 0 16px 14px rgba(0, 0, 0, .4);
     background: rgba(0, 0, 0, .15);
     flex: 1;
 }
 
-/* .hm-map-image-card:hover{
-    transition:.45s;
-    transform: scale(1.1);
-} */
+
 
 .hm-map-img {
     border-radius: 5px;
@@ -95,54 +92,18 @@ transition:.45s;
     box-shadow: 0 0 16px 14px rgba(0, 0, 0, .4);
 }
 
-.mv-preview .hm-map-img:hover {
+.mv-preview:hover  .hm-map-img {
     transform: scale(1.02);
 }
 
-/* Navigation */
 
-.hm-map-arrow {
-
-
-
-
-
-    position: absolute;
-
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    width: 55px;
-    height: 55px;
-
-    border: none;
-
-    background: rgba(0, 0, 0, .65);
-
-    color: white;
-
-    cursor: pointer;
-
-    font-size: 24px;
-
-    transition: .3s;
-}
-
-.hm-map-arrow:hover {
-
-    background: var(--lol-gold);
-
-    color: black;
-}
-
-.left {
-
+.hm-map-left-btn {
+top: 50%;
     left: 25px;
 }
 
-.right {
-
+.hm-map-right-btn {
+top: 50%;
     right: 25px;
 }
 
@@ -170,7 +131,7 @@ transition:.45s;
 
     color: white;
 
-    font-family: "EB Garamond";
+   
 }
 
 .hm-map-info p {
@@ -180,36 +141,15 @@ transition:.45s;
     -webkit-line-clamp: 7;
 
     -webkit-box-orient: vertical;
-    font-size: 1rem;
+   
     line-height: 2rem;
 
-    color: var(--lol-muted);
+     font-size: 1.1rem;
+   
+
+    color: var(--lol-text);
 
     margin-bottom: 35px;
-}
-
-/* Button */
-
-.hm-map-btn {
-
-    padding: 18px 34px;
-
-    border: 1px solid var(--lol-gold);
-
-    background: transparent;
-
-    color: var(--lol-gold);
-
-    cursor: pointer;
-
-    transition: .3s;
-}
-
-.hm-map-btn:hover {
-
-    background: var(--lol-gold);
-
-    color: black;
 }
 
 
@@ -286,7 +226,7 @@ transition:.45s;
         min-height: 220px;
     }
 
-    .hm-map-arrow {
+    /* .hm-map-arrow {
         border-radius: 30px;
         width: 34px;
         height: 34px;
@@ -294,15 +234,17 @@ transition:.45s;
         background-color: var(--lol-gold);
 
         top: 43%;
+    } */
+
+
+    .hm-map-right-btn {
+         top: 43%;
+        right: 24px;
     }
 
-
-    .right {
-        right: 5px;
-    }
-
-    .left {
-        left: 5px;
+    .hm-map-left-btn {
+         top: 43%;
+        left: 24px;
     }
 
     .hm-show-index {

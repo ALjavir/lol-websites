@@ -106,7 +106,7 @@ export default function HomeChampionSection({ featuredChampions }: HomeChampionS
                     <div className="hm-champion-img-wrapper">
 
                         <button
-                            className="hm-img-btn hm-img-btn-left"
+                            className="gold-btn-arrow hm-img-btn-left"
                             onClick={previousSkin}
                         >
                             ❮
@@ -143,7 +143,7 @@ export default function HomeChampionSection({ featuredChampions }: HomeChampionS
                         </div>
 
                         <button
-                            className="hm-img-btn hm-img-btn-right"
+                            className="gold-btn-arrow hm-img-btn-right"
                             onClick={nextSkin}
                         >
                             ❯

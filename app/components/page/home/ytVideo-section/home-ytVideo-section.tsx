@@ -1,7 +1,8 @@
 import MediaPopup from "~/components/common/MediaViewer/MediaViewer";
 import "./home-ytVideo-style.css"
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getYoutubeID } from "~/services/youTube";
+import "~/components/common/button/button-style.css"
 
 
 interface HomeYTVideoSectionProps {
@@ -11,36 +12,41 @@ interface HomeYTVideoSectionProps {
 export default function HomeYTVideoSection({
     ytVideo,
 }: HomeYTVideoSectionProps) {
-    const sliderRef = useRef<HTMLDivElement>(null);
+    const [currentVideo, setCurrentVideo] = useState(0);
 
+
+    const sliderRef = useRef<HTMLDivElement>(null);
+    const scrollAmount = () => {
+        if (!sliderRef.current) return 0;
+
+        return sliderRef.current.clientWidth * 0.8;
+    };
     const scrollLeft = () => {
         sliderRef.current?.scrollBy({
-            left: -700,
+            left: -scrollAmount(),
             behavior: "smooth",
         });
     };
 
     const scrollRight = () => {
         sliderRef.current?.scrollBy({
-            left: 700,
+            left: scrollAmount(),
             behavior: "smooth",
         });
     };
-
-
 
     return (
         <section id="home-yt-video-section">
 
             <button
-                className="yt-arrow yt-left"
+                className="gold-btn-arrow hm-yt-left-btn"
                 onClick={scrollLeft}
             >
                 ❮
             </button>
 
             <button
-                className="yt-arrow yt-right"
+                className="gold-btn-arrow hm-yt-right-btn"
                 onClick={scrollRight}
             >
                 ❯
@@ -53,34 +59,55 @@ export default function HomeYTVideoSection({
                 className="yt-slider"
                 ref={sliderRef}
             >
-          {ytVideo.map((video) => {
-    const id = getYoutubeID(video.link);
+                {ytVideo.map((video, index) => {
+                    const id = getYoutubeID(video.link);
 
-              return (
-        <div className="yt-card">
-        <MediaPopup
-            name=""
-            key={video.guid}
-            popupContent={
-                <iframe
-                    width="1280"
-                    height="720"
-                    src={`https://www.youtube.com/embed/${id}?autoplay=1&rel=0`}
-                    title={video.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                    allowFullScreen
-                />
-            }
-        >
-            <img
-                src={video.thumbnail}
-                alt={video.title}
-                className="yt-thumb"
-            />
-                      </MediaPopup>
-                      </div>
-    );
-})}
+                    return (
+                        <div className="yt-card">
+                            <img className="yt-card-bg" src={video.thumbnail}
+                                alt={video.title} />
+
+                            <div className="yt-card-content">
+                                <div className="yt-card-img">
+                                    <MediaPopup
+                                        name=""
+                                        key={video.guid}
+                                        popupContent={
+                                            <iframe
+                                                width="1280"
+                                                height="720"
+                                                src={`https://www.youtube.com/embed/${id}?autoplay=1&rel=0`}
+                                                title={video.title}
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                                                allowFullScreen
+                                            />
+                                        }
+                                    >
+                                        <img
+                                            src={video.thumbnail}
+                                            alt={video.title}
+                                            className="yt-thumb"
+                                        />
+                                    </MediaPopup>
+                                </div>
+
+                                <div className="yt-card-info">
+                                    <div className="yt-video-no">
+                                        <h1 className="yt-video-curent-index">{index + 1}</h1>
+                                        <span>/</span>
+                                        <h1 className="yt-video-total-no">{ytVideo.length}</h1>
+                                    </div>
+                                    <div className="yt-video-nm-dt">
+                                        <p className="yt-video-dt"> {video.pubDate}</p>
+                                        <h1 className="yt-video-nm">{video.title}</h1>
+
+                                    </div>
+                                </div></div>
+                        </div>
+
+                    );
+                })}
+
             </div>
 
         </section>

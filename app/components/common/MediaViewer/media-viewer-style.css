@@ -4,6 +4,8 @@
 }
 
 .zoom-btn-img {
+     outline: 2px solid var(--lol-gold-hover);
+    outline-offset: 4px;
     background-color: var(--lol-gold);
     border-radius: 30px;
     padding: 10px;
@@ -27,6 +29,7 @@
 
 .mv-preview:hover .mv-overlay {
     opacity: 1;
+    transform: scale(1.02);
     
 }
 
@@ -62,11 +65,16 @@
     object-fit: contain;
 }
 
+.mv-content img:hover{
+    transform: scale(1.02);
+}
 
 
 .mv-close {
+      outline: 2px solid var(--lol-gold-hover);
+    outline-offset: 4px;
     position: absolute;
-    top: -50px;
+    top: -55px;
     right: 0;
     color: white;
     width: 36px;
@@ -74,10 +82,13 @@
     border: none;
     cursor: pointer;
     font-size: 22px;
-    background: var(--lol-gold);
+   border: 2px solid var(--lol-gold);
     border-radius: 50%;
 }
-
+.mv-close:hover{
+ background: var(--lol-gold);
+ color: black;
+}
 
 /* body.media-open .hm-map-arrow{
     visibility: hidden;
@@ -86,6 +97,11 @@
 @media (max-width: 768px) {
     .mv-overlay {
         opacity: 1;
+    }
+
+
+    .mv-close{
+        background: var(--lol-gold);
     }
 .mv-content img,.mv-content video
  {

@@ -37,7 +37,7 @@ export default function HomeMapSection({ region }: HomeMapSectionProps) {
             </div>
 
             <button
-                className="hm-map-arrow left"
+                className="gold-btn-arrow hm-map-left-btn"
                 onClick={previousSkin}
             >
                 ❮
@@ -48,7 +48,7 @@ export default function HomeMapSection({ region }: HomeMapSectionProps) {
                 <h1 className="hm-total-index">{region.length}</h1>
             </div>
             <button
-                className="hm-map-arrow right"
+                className="gold-btn-arrow hm-map-right-btn"
                 onClick={nextSkin}
             >
                 ❯
