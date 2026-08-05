@@ -1,11 +1,12 @@
 import { type ReactNode, useEffect, useState } from "react";
 import "./media-viewer-style.css";
 import zoomBtn from '~/assets/image/icon/zoom.svg';
+import playBtn from '~/assets/image/icon/play.svg';
 
 
 interface MediaPopupProps {
     children: ReactNode;
-    loading?: boolean;
+
     name: string
     popupContent?: React.ReactNode;
 
@@ -13,7 +14,7 @@ interface MediaPopupProps {
 
 export default function MediaPopup({
     children,
-    loading = false,
+   
     name,
    popupContent,
 }: MediaPopupProps) {
@@ -42,7 +43,7 @@ export default function MediaPopup({
                 {children}
 
                 <div className="mv-overlay">
-                    <img className="zoom-btn-img" src={zoomBtn} />
+                    <img className="zoom-btn-img" src={name == "" ?playBtn: zoomBtn} />
                 </div>
             </div>
 
