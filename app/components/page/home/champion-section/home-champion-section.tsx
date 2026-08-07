@@ -124,15 +124,10 @@ export default function HomeChampionSection({ featuredChampions }: HomeChampionS
                                             currentSkin.num
                                         )}
                                         alt={featuredChampions.name}
-                                        onLoad={() => {
-                                            
-                                    
-                                        setLoading(false);
-                                        }}
                                         onError={() => {
                                             setCurrentIndex(0);
                                         }}
-                                        style={{ opacity: loading ? 0 : 1 }}
+                                  
                                     />
                                 }
                               

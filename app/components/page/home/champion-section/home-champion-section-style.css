@@ -150,16 +150,17 @@
     position: relative;
 
     width: min(1400px, 100%);
+ outline: 2px solid var(--lol-gold);
+    outline-offset: 4px;
 
-
-    border: 2px solid var(--lol-gold);
+    /* border: 2px solid var(--lol-gold); */
     box-shadow: 0 0 16px 14px rgba(0, 0, 0, .4);
     background: rgba(0, 0, 0, .15);
 }
 
 .hm-champion-img {
 
-    border-radius: 5px;
+   
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -259,6 +260,10 @@
 }
 
 @media (max-width: 1440px) {
+
+    .hm-champion-info{
+        gap: 4rem;
+    }
     .hm-img-btn-left {
         left: -15%;
     }

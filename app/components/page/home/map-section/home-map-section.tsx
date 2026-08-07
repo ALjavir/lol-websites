@@ -62,12 +62,11 @@ export default function HomeMapSection({ region }: HomeMapSectionProps) {
                     <MediaPopup
                         name={region[currentIndex].faction.name}
                         children={
+
                             <img
                                 className="hm-map-img"
                                 src={region[currentIndex].faction.image.uri}
                                 alt={region[currentIndex].faction.name}
-                            // onLoad={() => setLoading(false)}
-                            // style={{ opacity: loading ? 0 : 1 }}
                             />
                         } />
 

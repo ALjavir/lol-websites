@@ -4,7 +4,9 @@
     width: 100%;
 
     overflow: hidden;
-    /* box-shadow: 0 0 16px 14px rgba(0, 0, 0, .4); */
+    background: #00000070;
+    border: 1px solid rgba(0, 0, 0, 0.800);
+    box-shadow: 0 0 16px 14px rgba(0, 0, 0, .4);
     padding: 50px 0;
 }
 
@@ -42,7 +44,7 @@
     position: relative;
     overflow: hidden;
     flex-shrink: 0;
-    width: clamp(240px, 34vw, 620px);
+    width: clamp(240px, 34vw, 680px);
 
     border: 2px solid var(--lol-gold);
     box-shadow: 0 0 16px 14px rgba(0, 0, 0, .4);
@@ -212,13 +214,13 @@
 
 @media (max-width: 1024px) {
     .hm-yt-card {
-        width: clamp(242px, 41vw, 420px);
+        width: clamp(242px, 44vw, 450px);
     }
 }
 
 @media (max-width: 768px) {
     .hm-yt-card {
-        width: clamp(242px, 48vw, 369px);
+        width: clamp(242px, 55vw, 422px);
     }
 
     .hm-yt-fade-left {
@@ -228,8 +230,8 @@
         background:
             linear-gradient(to right,
                 rgb(0, 0, 0) 0%,
-                rgba(0, 0, 0, .85) 10%,
-                rgba(0, 0, 0, 0) 20%);
+                rgba(0, 0, 0, 0.4) 8%,
+                rgba(0, 0, 0, 0) 16%);
     }
 
     .hm-yt-fade-right {
@@ -239,8 +241,8 @@
         background:
             linear-gradient(to left,
                 rgb(0, 0, 0) 0%,
-                rgba(0, 0, 0, .85) 10%,
-                rgba(0, 0, 0, 0) 20%);
+                rgba(0, 0, 0, 0.4) 8%,
+                rgba(0, 0, 0, 0) 16%);
     }
 
     .hm-yt-right-btn {
@@ -292,10 +294,11 @@
     }
 
     .hm-yt-card {
-        width: clamp(360px, 48vw, 369px);
+        width: clamp(320px, 48vw, 369px);
     }
 
     .hm-yt-slider {
+        gap: 30;
         padding: 0 35px;
     }
 

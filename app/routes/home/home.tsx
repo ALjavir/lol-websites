@@ -25,6 +25,7 @@ import HomeChampionSection from '~/components/page/home/champion-section/home-ch
 import Loading from '~/components/common/loading/loading';
 import HomeMapSection from '~/components/page/home/map-section/home-map-section';
 import HomeYTVideoSection from '~/components/page/home/ytVideo-section/home-ytVideo-section';
+import CategorySection from '~/components/page/home/category/category-section';
 
 
 
@@ -123,9 +124,10 @@ export default function Home() {
       <HomeMapSection region={regions} />
       <Divider
         icon={videoDivider}
-        text="ICONIC VIDEO"
+        text="ICONIC SOUNDTRACK"
       />
       <HomeYTVideoSection ytVideo={videoYT} />
+      <CategorySection/>
     </main>
   );
 }

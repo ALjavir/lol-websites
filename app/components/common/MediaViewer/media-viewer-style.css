@@ -1,10 +1,23 @@
+@keyframes kenBurnsZoom {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.12);
+        /* Subtle 12% zoom in */
+    }
+}
+
 .mv-preview {
+    width: 100%;
+    height: 100%;
     position: relative;
     cursor: pointer;
 }
 
 .zoom-btn-img {
-     outline: 2px solid var(--lol-gold-hover);
+    outline: 2px solid var(--lol-gold-hover);
     outline-offset: 4px;
     background-color: var(--lol-gold);
     border-radius: 30px;
@@ -22,15 +35,15 @@
     align-items: center;
     opacity: 0;
     background: rgba(0, 0, 0, .45);
-    transition: .3s;
+   transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
     color: white;
-  
+
 }
 
 .mv-preview:hover .mv-overlay {
     opacity: 1;
     transform: scale(1.02);
-    
+
 }
 
 /* ======================= */
@@ -40,59 +53,88 @@
     background: rgb(0 0 0 / 80%);
     display: flex;
     justify-content: center;
-    align-items: center;  flex-direction: column;
-    z-index: 99999;
+    align-items: center;
+    flex-direction: column;
+    z-index: 99999 !important;
 }
 
-.name-of-contenet{
+.name-of-contenet {
     margin-top: 10px;
     font-size: 30px;
 }
 
 .mv-content {
+
     position: relative;
-    max-width: 90vw;
-    max-height: 90vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+
+
 }
 
-.mv-content img, .mv-content video
- {
-    max-width: 60vw;
-    max-height: 90vh;
-    object-fit: contain;
+
+
+.ani-img{
+      width: 70%;
+      object-fit: cover;
+    outline: 2px solid var(--lol-gold);
+    outline-offset: 4px;
+    overflow: hidden;
+    border-radius: 0px;
 }
 
-.mv-content img:hover{
-    transform: scale(1.02);
+.ani-img iframe{
+    width: 100%
 }
 
+.mv-content img {
+    animation: kenBurnsZoom 8s ease-in-out infinite alternate;
+    will-change: transform;
+}
+
+.mv-content video {
+    animation: none !important;
+}
+
+.mv-nm {
+    margin-top: 20px;
+    font-size: 2rem;
+}
 
 .mv-close {
-      outline: 2px solid var(--lol-gold-hover);
+    outline: 2px solid var(--lol-gold-hover);
     outline-offset: 4px;
-    position: absolute;
-    top: -55px;
-    right: 0;
+    position: relative;
+    top: 10%;
+    right: -40%;
     color: white;
     width: 36px;
     height: 36px;
     border: none;
     cursor: pointer;
     font-size: 22px;
-   border: 2px solid var(--lol-gold);
+    border: 2px solid var(--lol-gold);
     border-radius: 50%;
 }
-.mv-close:hover{
- background: var(--lol-gold);
- color: black;
+
+.mv-close:hover {
+    background: var(--lol-gold);
+    color: black;
 }
 
-/* body.media-open .hm-map-arrow{
-    visibility: hidden;
-} */
+@media (max-width: 1024px) {
+.ani-img{
+    width: 85%;
+}
+.mv-close{
+    top: -10%;
+}
+}
 
 @media (max-width: 768px) {
     .mv-overlay {
@@ -100,18 +142,17 @@
     }
 
 
-    .mv-close{
-        background: var(--lol-gold);
-    }
-.mv-content img,.mv-content video
- {
-    max-width: 90vw;
-    max-height: 90vh;
-    object-fit: contain;
+.mv-nm {
+  
+    font-size: 1rem;
 }
-.name-of-contenet{
-    font-size: 20px;
+   
+
+    .ani-img iframe {
+ 
+    height: 45vh;
 }
+
     .zoom-btn-img {
         background-color: var(--lol-gold);
         padding: 5px;
