@@ -3,6 +3,7 @@ import letDivider from '~/assets/image/divider/latest-divider-icon.png';
 import champDivider from '~/assets/image/divider/icon_champion.png';
 import mapDivider from '~/assets/image/divider/featured-battlefield.png';
 import videoDivider from '~/assets/image/divider/video-icon.png';
+import catDivider from '~/assets/image/divider/catdiv.png';
 
 import "./home-style.css";
 import {
@@ -127,7 +128,11 @@ export default function Home() {
         text="ICONIC SOUNDTRACK"
       />
       <HomeYTVideoSection ytVideo={videoYT} />
-      <CategorySection/>
+      <Divider
+        icon={catDivider}
+        text="CATEGORY"
+      />
+      <CategorySection />
     </main>
   );
 }

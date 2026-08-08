@@ -91,8 +91,12 @@
 
 /* Responsive adjustments for Mobile */
 @media (max-width: 768px) {
+    #home-hero-section {
+
+    height: 80vh;}
     .home-hero-section-content{
-        opacity: 1;
+  
+     height: 80vh;
         visibility:visible;
     }
     .home-hero-section-content-image {

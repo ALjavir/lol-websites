@@ -3,7 +3,7 @@ import "./home-ytvideo-style.css";
 import { useEffect, useRef, useState } from "react";
 import { getYoutubeID } from "~/services/youTube";
 import "~/components/common/button/button-style.css"
-
+import ytbg from '~/assets/image/cat/ytbg.jpg';
 
 interface HomeYTVideoSectionProps {
     ytVideo: any[];
@@ -37,7 +37,7 @@ export default function HomeYTVideoSection({
 
     return (
         <section id="home-yt-video-section">
-
+         <img className="hm-yt-bg-img" src={ytbg} alt="" />
             <button
                 className="gold-btn-arrow hm-yt-left-btn"
                 onClick={scrollLeft}

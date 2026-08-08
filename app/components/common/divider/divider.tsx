@@ -8,7 +8,11 @@ export default function Divider({ icon, text }: DividerProps) {
     return (
         <div className="divider-container">
             <div className="divider-icon">
-                <img src={icon} alt="" />
+                <img style={{
+      width: text == "CATEGORY" ? 'auto' : '36px',
+      height: text == "CATEGORY" ? 'auto' : '36px',
+      objectFit: 'contain'
+    }} src={icon} alt="" />
             </div>
 
 

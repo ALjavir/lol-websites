@@ -3,6 +3,7 @@ import newCatImg from "~/assets/image/cat/newsCat.jpg"
 import ytCatImg from "~/assets/image/cat/ytVideoCat.jpg"
 import regCatImg from "~/assets/image/cat/regionCat.jpg"
 import comCatImg from "~/assets/image/cat/comicCat.jpg"
+import catBg from "~/assets/image/cat/catBg.jpg"
 import "./category-section-style.css"
 
 export default function CategorySection() {
@@ -34,6 +35,8 @@ export default function CategorySection() {
 
     return (
         <section id='category-section'>
+         
+            <img className='cat-sec-bg-img' src={catBg} alt="" />
             <div className='cat-sec-content'>
                 {
                     categoryData.map(
