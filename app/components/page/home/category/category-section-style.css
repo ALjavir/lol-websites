@@ -6,7 +6,19 @@
 box-shadow: 0 0 16px 14px rgba(0, 0, 0, .4);
 }
 
-
+#category-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right, 
+    rgba(0, 0, 0, 0.85) 0%, 
+    rgba(0, 0, 0, 0.6) 50%, 
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  z-index: 2; /* Sits on top of image, below content */
+  pointer-events: none; /* Mouse clicks pass through to content */
+}
 .cat-sec-bg-img {
     filter: brightness(0.80);
     position: absolute;
@@ -18,9 +30,10 @@ box-shadow: 0 0 16px 14px rgba(0, 0, 0, .4);
     z-index: 1;
 }
 
+
 .cat-sec-content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2rem;
