@@ -18,11 +18,11 @@
     border-radius: 50%;
     border: 2px solid var(--lol-gold);
 
-    
+
 
     box-shadow:
-        inset 0 0 8px rgba(255,255,255,0.03),
-        0 0 8px rgba(200,170,110,0.18);
+        inset 0 0 8px rgba(255, 255, 255, 0.03),
+        0 0 8px rgba(200, 170, 110, 0.18);
 }
 
 
@@ -33,15 +33,25 @@
     gap: 2rem;
 }
 
+.divider-line-end {
+    margin: 0.4rem 0;
+    /* background: var(--lol-gold); */
+height: 0.4rem;
+    background: linear-gradient(to right,
+            transparent,
+            var(--lol-gold-hover),
+            transparent);
+}
+
+
 .divider-line {
+
     flex: 1;
-    height: 1px;
-    background: linear-gradient(
-        to right,
-        transparent,
-        var(--lol-gold),
-        transparent
-    );
+    height: 2px;
+    background: linear-gradient(to right,
+            transparent,
+            var(--lol-gold),
+            transparent);
 }
 
 .divider-text {
@@ -56,14 +66,17 @@
 
 @media (max-width: 768px) {
     .divider-icon {
-    width: 56px;
-    height: 56px;}
-.divider-icon img {
-    width: 26px;
-    height: 26px;}
+        width: 56px;
+        height: 56px;
+    }
 
-.divider-text{
-    font-size: 1rem;
-}
+    .divider-icon img {
+        width: 26px;
+        height: 26px;
+    }
+
+    .divider-text {
+        font-size: 1rem;
+    }
 
 }

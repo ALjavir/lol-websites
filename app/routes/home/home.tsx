@@ -5,7 +5,6 @@ import mapDivider from '~/assets/image/divider/featured-battlefield.png';
 import videoDivider from '~/assets/image/divider/video-icon.png';
 import catDivider from '~/assets/image/divider/catdiv.png';
 
-import "./home-style.css";
 import {
   getLatestPatchVersion,
   getLoLNews,
@@ -21,7 +20,7 @@ import { getLoLYouTubeVideos, type YouTubeVideo } from "../../services/youTube"
 
 import HomeHeroSection from '~/components/page/home/hero-section/hero-section';
 import HomeLeatestUpdateSection from '~/components/page/home/leatestUpdate-section/leatestUpdate-section';
-import Divider from '~/components/common/divider/divider';
+import { Divider, EndDivider } from '~/components/common/divider/divider';
 import HomeChampionSection from '~/components/page/home/champion-section/home-champion-section';
 import Loading from '~/components/common/loading/loading';
 import HomeMapSection from '~/components/page/home/map-section/home-map-section';
@@ -106,8 +105,6 @@ export default function Home() {
     <main>
       <HomeHeroSection heroVideo={heroVideo} />
 
-      <div className="hm-background" />
-
       <Divider
         icon={letDivider}
         text="LATEST UPDATES"
@@ -133,6 +130,7 @@ export default function Home() {
         text="CATEGORY"
       />
       <CategorySection />
+    <EndDivider/>
     </main>
   );
 }

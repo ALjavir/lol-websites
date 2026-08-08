@@ -1,7 +1,7 @@
 
 import './Footer.css';
 import logoImg from "~/assets/image/logo/logo-1.png"
-import footerBg from "~/assets/image/cat/footerBg.jpg"
+import footerBg from "~/assets/image/canvas/footerBg.jpg"
 export default function Footer() {
     const currentYear = new Date().getFullYear();
 
@@ -15,7 +15,8 @@ export default function Footer() {
 
     return (
         <footer className="main-footer">
-            {/* <img className='footer-img-bg' src={footerBg} alt="" /> */}
+            <img className='footer-img-bg' src={footerBg} alt="" />
+    
             <div className="footer-container">
 
                 <img className='logo' src={logoImg} alt="Leauge Of Legends X Javir" />
@@ -37,7 +38,8 @@ export default function Footer() {
                 <p className="footer-disclaimer">
                     © {currentYear} LoL Explorer, Inc. All rights reserved. League of Legends and all related logos, characters, names and distinctive likenesses thereof are exclusive property of Riot Games, Inc.
                 </p>
-            </div>
+                </div>
+           
         </footer>
     );
 }

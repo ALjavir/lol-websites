@@ -2,7 +2,6 @@ import { ddragonAssets } from "~/services/ddragonService";
 import "./home-champion-section-style.css";
 
 import { useEffect, useState } from "react";
-import Loading from "~/components/common/loading/loading";
 import ButtonBlue from "~/components/common/button/blue-button";
 import MediaViewer from "~/components/common/MediaViewer/MediaViewer";
 import MediaPopup from "~/components/common/MediaViewer/MediaViewer";
@@ -11,7 +10,7 @@ interface HomeChampionSectionProps {
     featuredChampions: any;
 }
 export default function HomeChampionSection({ featuredChampions }: HomeChampionSectionProps) {
-    const [loading, setLoading] = useState(true);
+
     const [currentIndex, setCurrentIndex] = useState(0);
     const realSkins = featuredChampions.skins.filter(
         (skin: any) => skin.parentSkin === undefined
@@ -26,11 +25,7 @@ export default function HomeChampionSection({ featuredChampions }: HomeChampionS
         indicatorList = Array.from({ length: realSkins.length }, (_, i) => i);
         MAX_SKIN = realSkins.length - 1;
     }
-    useEffect(() => {
 
-        setLoading(true);
-
-    }, [featuredChampions.id, currentSkin]);
 
     const previousSkin = () => {
         setCurrentIndex(prev => (prev === 0 ? MAX_SKIN : prev - 1));
@@ -103,6 +98,11 @@ export default function HomeChampionSection({ featuredChampions }: HomeChampionS
 
                     </div>
 
+
+
+
+
+
                     <div className="hm-champion-img-wrapper">
 
                         <button
@@ -113,7 +113,7 @@ export default function HomeChampionSection({ featuredChampions }: HomeChampionS
                         </button>
 
                         <div className="hm-champion-img-border">
-                            {/* {loading && <Loading loading={true} />} */}
+
                             <MediaPopup
                                 name={currentSkin.name}
                                 children={
@@ -127,10 +127,10 @@ export default function HomeChampionSection({ featuredChampions }: HomeChampionS
                                         onError={() => {
                                             setCurrentIndex(0);
                                         }}
-                                  
+
                                     />
                                 }
-                              
+
                             >
 
                             </MediaPopup>
@@ -159,6 +159,12 @@ export default function HomeChampionSection({ featuredChampions }: HomeChampionS
                         </div>
 
                     </div>
+
+
+
+
+
+
 
                 </div>
             </div>

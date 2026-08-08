@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "./top-navBar-style.css"
 import logoImg from "~/assets/image/logo/logo.png"
 import ButtonBlue from '../button/blue-button';
+import { NavLink } from 'react-router/internal/react-server-client';
 
 
 export default function TopNavBar() {
@@ -9,7 +10,14 @@ export default function TopNavBar() {
   const [activeTab, setActiveTab] = useState('HOME');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const navItems = ['HOME', 'CHAMPIONS', 'MAPS', 'SPELLS', 'RUNES', 'ITEMS'];
+  const navItems = [
+    { name: "HOME", path: "/" },
+    { name: "CHAMPIONS", path: "/champions" },
+    { name: "MAPS", path: "/MAPS" },
+    { name: "SPELLS", path: "/SPELLS" },
+    { name: "RUNES", path: "/RUNES" },
+    { name: "ITEMS", path: "/ITEMS" },
+  ];
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev);
@@ -20,23 +28,23 @@ export default function TopNavBar() {
       <img className='logo' src={logoImg} alt="Leauge Of Legends X Javir" />
       <nav className={`nav-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
         {navItems.map((item) => (
-          <button
-            key={item}
-            onClick={() => {
-              setActiveTab(item);
-              setIsMobileMenuOpen(false);
-            }}
-            className={`nav-link ${activeTab === item ? 'active' : ''}`}
+          <NavLink
+            key={item.name}
+            to={item.path}
+            onClick={() => setIsMobileMenuOpen(false)}
+            className={({ isActive }) =>
+              `nav-link ${isActive ? "active" : ""}`
+            }
           >
-            {item}
-          </button>
+            {item.name}
+          </NavLink>
         ))}
       </nav>
 
 
       <div className="nav-actions">
 
-        <ButtonBlue link={logInLink} text="PLAY NOW" showBig={false}/>
+        <ButtonBlue link={logInLink} text="PLAY NOW" showBig={false} />
         <button
           className="mobile-menu-btn"
           onClick={toggleMobileMenu}

@@ -3,7 +3,7 @@ import "./home-ytvideo-style.css";
 import { useEffect, useRef, useState } from "react";
 import { getYoutubeID } from "~/services/youTube";
 import "~/components/common/button/button-style.css"
-import ytbg from '~/assets/image/cat/ytbg.jpg';
+import ytbg from '~/assets/image/canvas/ytbg.jpg';
 
 interface HomeYTVideoSectionProps {
     ytVideo: any[];
