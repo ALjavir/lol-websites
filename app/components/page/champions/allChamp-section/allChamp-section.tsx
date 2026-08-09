@@ -5,6 +5,9 @@ import assassinDivider from '~/assets/image/divider/role_icon_assassin.png';
 import supportDivider from '~/assets/image/divider/role_icon_support.png';
 import tankDivider from '~/assets/image/divider/role_icon_tank.png';
 import marksmanDivider from '~/assets/image/divider/role_icon_marksman.png';
+import { ddragonAssets } from "~/services/ddragonService";
+import "./allChamp-style.css";
+
 
 
 interface ALlChampSectionProps {
@@ -13,6 +16,7 @@ interface ALlChampSectionProps {
 
 
 import { useMemo, useState } from "react";
+import { Divider } from '~/components/common/divider/divider';
 
 export default function ALlChampSection({
     allChampData
@@ -68,96 +72,103 @@ export default function ALlChampSection({
     return (
         <section id="all-champ-section">
 
-            {/* SORT BUTTONS */}
-
-            <div className="champ-sort">
+            <div className="all-champ-sort">
 
                 <button
                     className={sortBy === "all" ? "active" : ""}
                     onClick={() => setSortBy("all")}
                 >
-                    ALL
+                    A-Z | {allChampData.length}
                 </button>
 
                 <button
                     className={sortBy === "role" ? "active" : ""}
                     onClick={() => setSortBy("role")}
                 >
-                    ROLE
+                    ROLE | {roleDataMap.length}
                 </button>
 
             </div>
 
 
-            {/* =========================
-                ALL CHAMPIONS
-            ========================= */}
-
             {sortBy === "all" && (
+                   <div className='all-chm-continer'>
+      <Divider
+        icon={champDivider}
+       text={`CHAMPIONS | ${allChampData.length}`}
+      />
 
-                <div className="champ-grid">
+               
+                <div className="all-champ-grid">
 
                     {allChampData.map((champion) => (
-
                         <div
-                            className="champ-card"
+                            className="all-champ-card"
                             key={champion.id}
                         >
-
                             <img
-                                src={champion.image.full}
+                                src={ddragonAssets.getSplashArt(champion.id)}
                                 alt={champion.name}
                             />
+                            <div className='all-ch-info-card'>
+                                <h1>{champion.name}</h1>
+                                <div className='all-ch-role-card'>
+                                    <p>
+                                        {champion.tags.join(" // ")}
+                                    </p>
+                                    <p>❯</p>
 
-                            <h2>{champion.name}</h2>
+                                </div>
+                            </div>
 
                         </div>
 
                     ))}
-
+    </div>
                 </div>
 
             )}
 
-
-            {/* =========================
-                CHAMPIONS BY ROLE
-            ========================= */}
-
             {sortBy === "role" && (
 
-                <div className="champ-role-container">
+                <div className="all-champ-role-container">
 
                     {roleChampData.map((role) => (
 
-                        <section
-                            className="champ-role-section"
+                        <div
+                           className="all-champ-role"
                             key={role.role}
                         >
-
-                            <img
-                                className="role-divider"
-                                src={role.image}
-                                alt={role.role}
+                            <Divider
+                                icon={role.image}
+                                text={`${role.role} | ${role.data.length}`}
                             />
 
-                            <h2>{role.role}</h2>
-
-                            <div className="champ-grid">
+                            <div className="all-champ-grid">
 
                                 {role.data.map((champion) => (
 
                                     <div
-                                        className="champ-card"
+                                        className="all-champ-card"
                                         key={champion.id}
                                     >
 
+
                                         <img
-                                            src={champion.image.full}
+                                            src={ddragonAssets.getSplashArt(champion.id)}
                                             alt={champion.name}
                                         />
 
-                                        <h2>{champion.name}</h2>
+                                        <div className='all-ch-info-card'>
+                                            <h1>{champion.name}</h1>
+                                            <div className='all-ch-role-card'>
+                                                <p>
+                                                    {champion.tags.join(" // ")}
+                                                </p>
+                                                <p>❯</p>
+
+                                            </div>
+                                        </div>
 
                                     </div>
 
@@ -165,7 +176,7 @@ export default function ALlChampSection({
 
                             </div>
 
-                        </section>
+                        </div>
 
                     ))}
 

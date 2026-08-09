@@ -2,7 +2,7 @@ import { ddragonAssets } from "~/services/ddragonService";
 import "./home-champion-section-style.css";
 
 import { useEffect, useState } from "react";
-import ButtonBlue from "~/components/common/button/blue-button";
+import {  ButtonBlue } from "~/components/common/button/button";
 import MediaViewer from "~/components/common/MediaViewer/MediaViewer";
 import MediaPopup from "~/components/common/MediaViewer/MediaViewer";
 
@@ -86,7 +86,7 @@ export default function HomeChampionSection({ featuredChampions }: HomeChampionS
                                 </p>
 
                                 <h3 className="hm-champion-role-value">
-                                    {featuredChampions.tags.join(", ")}
+                                    {featuredChampions.tags.join(" // ")}
                                 </h3>
                             </div>
 

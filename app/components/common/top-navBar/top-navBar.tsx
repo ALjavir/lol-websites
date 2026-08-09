@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import "./top-navBar-style.css"
 import logoImg from "~/assets/image/logo/logo.png"
-import ButtonBlue from '../button/blue-button';
+
 import { NavLink } from 'react-router/internal/react-server-client';
+import { ButtonBlue } from '../button/button';
 
 
 export default function TopNavBar() {

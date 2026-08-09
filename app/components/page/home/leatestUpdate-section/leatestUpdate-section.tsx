@@ -1,6 +1,6 @@
 import DateConverter from "~/components/common/converter/date";
 import "./leatestUpdate-section.css"
-import ButtonBlue from "~/components/common/button/blue-button";
+import { ButtonBlue } from "~/components/common/button/button";
 
 
 interface LeatestUpdateSectionProps {

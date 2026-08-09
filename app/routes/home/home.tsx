@@ -130,7 +130,7 @@ export default function Home() {
         text="CATEGORY"
       />
       <CategorySection />
-    <EndDivider/>
+   
     </main>
   );
 }

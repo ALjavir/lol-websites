@@ -3,8 +3,8 @@
   color: var(--lol-dark-btn);
   border: none;
   border-radius: 4px;
-    padding: 0.6rem 0.8rem;
-    font-size: 0.8rem;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.8rem;
   font-weight: bold;
   letter-spacing: 1px;
   cursor: pointer;
@@ -15,7 +15,7 @@
 
 .ButtonBlue-btn-big {
   font-size: 0.9rem;
-    padding: 1rem 1.2rem;
+  padding: 1rem 1.2rem;
 }
 
 .ButtonBlue-btn:hover {
@@ -23,78 +23,114 @@
 }
 
 .ButtonGold-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--lol-gold);
-    color: var(--lol-bg);
-    font-size: 0.95rem;
-    font-weight: bold;
-    letter-spacing: 1.5px;
-    text-decoration: none;
-    padding: 0.85rem 2.25rem;
-    box-shadow: 0 0 15px rgba(200, 170, 110, 0.4);
-    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-    cursor: pointer;
-    white-space: nowrap;
-    outline: 1px solid var(--lol-text);
-    outline-offset: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--lol-gold);
+  color: var(--lol-bg);
+  font-size: 0.95rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  padding: 0.85rem 2.25rem;
+  box-shadow: 0 0 15px rgba(200, 170, 110, 0.4);
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+  white-space: nowrap;
+  outline: 1px solid var(--lol-text);
+  outline-offset: 3px;
 }
 
 
 
 .ButtonGold-btn:hover {
-    background-color: var(--lol-gold-hover);
-    box-shadow: 0 0 25px rgba(200, 170, 110, 0.7);
-    
+  background-color: var(--lol-gold-hover);
+  box-shadow: 0 0 25px rgba(200, 170, 110, 0.7);
+
 }
 
 
 
 .gold-btn-arrow {
-     outline: 2px solid rgba(0, 0, 0, .65);
-    outline-offset: 4px;
-      border-radius: 30px;
-    position: absolute;
+  outline: 2px solid rgba(0, 0, 0, .65);
+  outline-offset: 4px;
+  border-radius: 30px;
+  position: absolute;
 
-    transform: translateY(-50%);
+  transform: translateY(-50%);
 
-    width: 50px;
-    height: 50px;
+  width: 50px;
+  height: 50px;
 
-    border: none;
+  border: none;
 
-    background: rgba(0, 0, 0, .65);
+  background: rgba(0, 0, 0, .65);
 
-    color: white;
+  color: white;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    font-size: 24px;
+  font-size: 24px;
 
-    transition: .3s;
+  transition: .3s;
 }
 
 .gold-btn-arrow:hover {
-       outline: 2px solid var(--lol-gold-hover);
- 
-    background: var(--lol-gold);
+  outline: 2px solid var(--lol-gold-hover);
 
-    color: black;
+  background: var(--lol-gold);
+
+  color: black;
+}
+
+
+
+
+
+.gold-btn-square button{
+  outline: 2px solid var(--lol-gold);
+  outline-offset: 4px;
+
+  position: absolute;
+
+  transform: translateY(-50%);
+
+  width: 50px;
+  height: 50px;
+
+  border: none;
+
+  background: rgba(0, 0, 0, .65);
+
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 24px;
+
+  transition: .3s;
+}
+
+.gold-btn-square button:hover {
+  outline: 2px solid var(--lol-gold-hover);
+
+  background: var(--lol-gold);
+
+  color: black;
 }
 
 
 @media (max-width: 768px) {
 
-    .gold-btn-arrow {
-      font-size: 20px;
-        outline: 2px solid var(--lol-gold-hover);
-        border-radius: 30px;
-        width: 34px;
-        height: 34px;
-        color: black;
-        background-color: var(--lol-gold);
+  .gold-btn-arrow {
+    font-size: 20px;
+    outline: 2px solid var(--lol-gold-hover);
+    border-radius: 30px;
+    width: 34px;
+    height: 34px;
+    color: black;
+    background-color: var(--lol-gold);
 
-       
-    }
+
   }
+}

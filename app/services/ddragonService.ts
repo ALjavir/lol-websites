@@ -1,7 +1,7 @@
 const DDRAGON_BASE_URL = 'https://ddragon.leagueoflegends.com';
 
 
- let cachedVersion: string | null = null;
+let cachedVersion: string | null = null;
 //let cachedPatchNotes: any[] | null = null;
 let cachedNews: any[] | null = null;
 export let cachedChampions: any[] | null = null;
@@ -15,7 +15,7 @@ export async function getLatestPatchVersion(): Promise<string> {
   try {
     const res = await fetch(`${DDRAGON_BASE_URL}/api/versions.json`);
     if (!res.ok) throw new Error("Failed to fetch game versions");
-    
+
     const versions: string[] = await res.json();
     cachedVersion = versions[0]; // Cache the latest version string
     return cachedVersion;
@@ -34,7 +34,7 @@ export async function getLatestPatchVersion(): Promise<string> {
 //   try {
 //     const res = await fetch(`https://soraclee.github.io/riotgames-news-api/data/lol/patchNoteEn.json`);
 //     if (!res.ok) throw new Error("Failed to fetch patch notes");
-    
+
 //     const data = await res.json();
 //     // Handles array responses directly
 //     cachedPatchNotes = Array.isArray(data) ? data : Object.values(data);
@@ -54,7 +54,7 @@ export async function getLoLNews(category = 'allNewsEn'): Promise<any[]> {
   try {
     const res = await fetch(`https://soraclee.github.io/riotgames-news-api/data/lol/${category}.json`);
     if (!res.ok) throw new Error("Failed to fetch League news");
-    
+
     const data = await res.json();
     const newsArray = Array.isArray(data) ? data : Object.values(data);
 
@@ -76,12 +76,14 @@ export async function getAllChampions(): Promise<any[]> {
   if (cachedChampions) return cachedChampions;
 
   try {
-    const activeVersion = await getLatestPatchVersion(); 
+    const activeVersion = await getLatestPatchVersion();
     const res = await fetch(`${DDRAGON_BASE_URL}/cdn/${activeVersion}/data/${lang}/champion.json`);
     if (!res.ok) throw new Error('Failed to fetch champions');
-    
+
     const data = await res.json();
-    cachedChampions = Object.values(data.data);
+    const allChamps: any[] = Object.values(data.data);
+    cachedChampions = allChamps.filter((champ) => !champ.id.startsWith('Jade_'));
+
     return cachedChampions;
   } catch (error) {
     console.error('Error fetching champions:', error);
@@ -97,7 +99,7 @@ export async function getChampionDetails(championId: string): Promise<any> {
     const activeVersion = await getLatestPatchVersion();
     const res = await fetch(`${DDRAGON_BASE_URL}/cdn/${activeVersion}/data/${lang}/champion/${championId}.json`);
     if (!res.ok) throw new Error(`Failed to fetch details for ${championId}`);
-    
+
     const data = await res.json();
     return data.data[championId];
   } catch (error) {
@@ -109,14 +111,14 @@ export async function getChampionDetails(championId: string): Promise<any> {
 /**
  * 5. Get All Items (Cached)
  */
-export async function getAllItems():  Promise<any[]> {
+export async function getAllItems(): Promise<any[]> {
   if (cachedItems) return cachedItems;
 
   try {
     const activeVersion = await getLatestPatchVersion();
     const res = await fetch(`${DDRAGON_BASE_URL}/cdn/${activeVersion}/data/${lang}/item.json`);
     if (!res.ok) throw new Error('Failed to fetch items');
-    
+
     const data = await res.json();
     cachedItems = Object.values(data.data);
     return cachedItems;

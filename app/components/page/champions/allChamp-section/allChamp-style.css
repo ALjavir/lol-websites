@@ -1,0 +1,233 @@
+#all-champ-section {
+    position: relative;
+    width: 100%;
+    padding: 80px 5vw 200px;
+}
+
+
+.all-champ-sort {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin: 120px 0px 0;
+
+}
+
+.all-champ-sort button {
+    position: relative;
+    box-shadow: 0 0 16px 14px rgba(0, 0, 0, .4);
+    outline: 2px solid var(--lol-gold);
+    outline-offset: 4px;
+    padding: 12px 32px;
+    color: var(--lol-muted);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.all-champ-sort button:hover {
+    color: var(--lol-bg);
+    background-color: var(--lol-gold-hover);
+    box-shadow: 0 0 25px rgba(200, 170, 110, 0.7);
+
+}
+
+.all-champ-sort button.active {
+    color: var(--lol-bg);
+    background: var(--lol-gold);
+}
+
+
+
+
+.all-champ-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 34px;
+}
+
+
+.all-champ-card {
+     box-shadow: 0 0 16px 14px rgba(0, 0, 0, .4);
+    outline: 2px solid var(--lol-gold);
+    outline-offset: 4px;
+    position: relative;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    cursor: pointer;
+    transition:
+        transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+        border-color 0.4s ease;
+}
+
+.all-champ-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.7);
+    transition:
+        transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+        filter 0.5s ease;
+}
+
+.all-champ-card:hover img {
+    transform: scale(1.08);
+    filter: brightness(1);
+}
+
+.all-champ-card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.95) 0%,
+            rgba(0, 0, 0, 0.45) 35%,
+            transparent 70%);
+}
+
+.all-ch-info-card {
+    position: absolute;
+    display: flex;
+    font-family: var(--lol-font-p);
+    padding: 12px;
+    bottom: 0;
+    gap: 8px;
+    width: 100%;
+    z-index: 2;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+        transition:
+        transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+        filter 0.5s ease;
+    flex-direction: column;
+}
+
+.all-champ-card:hover .all-ch-info-card h1 {
+        transition:
+        transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+        filter 0.5s ease;
+    color: var(--lol-gold);
+    transform: translateY(-3px);
+}
+
+.all-ch-role-card {
+        transition:
+        transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+        filter 0.5s ease;
+    font-family: var(--lol-font-t);
+    color: var(--lol-muted);
+    display: flex;
+    font-size: 0.8rem;
+    justify-content: space-between;
+}
+
+.all-champ-card:hover .all-ch-role-card {
+    color: var(--lol-text);
+}
+
+
+.all-champ-role-container {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 100px;
+}
+
+.all-champ-role-grid {
+    position: relative;
+}
+
+
+.all-champ-role .champ-grid {
+    position: relative;
+
+    z-index: 1;
+}
+
+
+@media (max-width: 1024px) {
+    .all-champ-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+
+
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    #all-champ-section {
+        padding: 60px 40px 100px;
+    }
+
+    .all-champ-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+
+
+    }
+    .all-champ-card img {
+        filter: brightness(1);
+    }
+
+
+    .all-champ-card {
+        font-size: 1.3rem;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    #all-champ-section {
+        padding: 50px 20px 150px;
+    }
+
+    .all-champ-sort {
+        margin-bottom: 0px;
+    }
+
+    .all-champ-sort button {
+        padding: 10px 20px;
+
+        font-size: 0.65rem;
+    }
+
+    .all-champ-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 25px;
+    }
+
+    .all-ch-info-card {
+
+        font-size: 1.1rem;
+    }
+
+    .all-ch-role-card {
+        font-size: 0.5rem;
+    }
+        .all-champ-card img {
+        filter: brightness(1);
+    }
+
+    .all-champ-role-container {
+        gap: 70px;
+    }
+
+}

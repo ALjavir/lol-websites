@@ -3,6 +3,7 @@ import type { Route } from "../../+types/root";
 import TopNavBar from "~/components/common/top-navBar/top-navBar";
 import { Outlet } from "react-router";
 import "./layout.css"
+import { EndDivider } from "~/components/common/divider/divider";
 
 export function meta({ }: Route.MetaArgs) {
     return [
@@ -20,6 +21,7 @@ export default function MainLayout() {
             <main className="main-layout-section">
                 <Outlet />
             </main>
+             <EndDivider/>
             <Footer />
         </div>
     );

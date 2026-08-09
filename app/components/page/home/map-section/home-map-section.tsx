@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import Loading from "~/components/common/loading/loading";
 import "./home-map-style.css";
-import ButtonBlue from "~/components/common/button/blue-button";
+
 import MediaPopup from "~/components/common/MediaViewer/MediaViewer";
+import { ButtonBlue } from "~/components/common/button/button";
 
 interface HomeMapSectionProps {
     region: any[];

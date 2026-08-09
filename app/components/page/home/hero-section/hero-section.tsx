@@ -1,4 +1,5 @@
-import ButtonGold from "~/components/common/button/gold-button";
+
+import { ButtonGold } from "~/components/common/button/button";
 import "./hero-section.css"
 import lolLogo from "~/assets/image/logo/lol-logo.png"
 interface HomeHeroSectionProps {
