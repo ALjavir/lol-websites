@@ -1,7 +1,7 @@
 #all-champ-section {
     position: relative;
     width: 100%;
-    padding: 80px 5vw 200px;
+    padding: 20px 5vw 200px;
 }
 
 
@@ -171,7 +171,7 @@
 @media (max-width: 900px) {
 
     #all-champ-section {
-        padding: 60px 40px 100px;
+        padding: 20px 40px 100px;
     }
 
     .all-champ-grid {
@@ -195,7 +195,7 @@
 @media (max-width: 500px) {
 
     #all-champ-section {
-        padding: 50px 20px 150px;
+        padding: 20px 20px 150px;
     }
 
     .all-champ-sort {

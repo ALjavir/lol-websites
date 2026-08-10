@@ -10,7 +10,8 @@ import {
 export default [
   layout("./routes/layout/layout.tsx", [
     index("./routes/home/home.tsx"),
-    route("champions", "./routes/champions/champions.tsx")
+    route("champions", "./routes/champions/champions.tsx"),
+    route("regions", "./routes/regions/regions.tsx")
 
     // ...prefix("shop", [
     //   index("./routes/shop/index.tsx"),

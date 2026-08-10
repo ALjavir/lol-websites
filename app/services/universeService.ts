@@ -1,6 +1,6 @@
 const UNIVERSE_BASE_URL = 'https://universe-meeps.leagueoflegends.com/v1/en_us';
 const CLOUDFRONT_VIDEO_URL = 'https://d28xe8vt774jo5.cloudfront.net/champion-abilities';
-let cachedAllRegions: any[] | null = null;
+export let cachedAllRegions: any[] | null = null;
 let cachedComicsIndex: any[] | null = null;
 export const RUNETERRA_REGION_SLUGS = [
   'ixtal','bandle-city',

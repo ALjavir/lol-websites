@@ -15,36 +15,22 @@ export default function Champion() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-
         async function init() {
             try {
                 setLoading(true);
-
                 if (!cachedChampions || cachedChampions.length === 0) {
-
                     const data = await getAllChampions();
-
                     setChampions(data);
-
                 } else {
-
                     setChampions(cachedChampions);
-
                 }
-
             } catch (error) {
-
                 console.error("Failed to load champions:", error);
-
             } finally {
-
                 setLoading(false);
-
             }
         }
-
         init();
-
     }, []);
 
     if (loading) {

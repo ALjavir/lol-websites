@@ -14,7 +14,7 @@ export default function TopNavBar() {
   const navItems = [
     { name: "HOME", path: "/" },
     { name: "CHAMPIONS", path: "/champions" },
-    { name: "MAPS", path: "/MAPS" },
+    { name: "REGIONS", path: "/regions" },
     { name: "SPELLS", path: "/SPELLS" },
     { name: "RUNES", path: "/RUNES" },
     { name: "ITEMS", path: "/ITEMS" },

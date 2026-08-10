@@ -1,0 +1,127 @@
+#reg-hero-section {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    box-shadow: 0 0 16px 14px rgba(0, 0, 0, .4);
+}
+
+
+/* =========================
+   HERO VIDEO
+========================= */
+
+.reg-hero-video {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+}
+
+
+/* =========================
+   DARK GRADIENT
+========================= */
+
+#reg-hero-section::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 30%,
+    rgba(0, 0, 0, 0.30) 55%,
+    rgba(0, 0, 0, 0.60) 78%,
+    rgba(5, 5, 5, 0.90) 100%
+);
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+.reg-hero-main-cont {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+
+    height: 100%;
+    align-items: center;
+
+    display: flex;
+}
+
+
+
+
+.reg-hero-sec-cont {
+        display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+width: 100%;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    flex-direction: row;
+}
+
+/* LEFT */
+.reg-hero-left-cont {
+    height: 100%;
+
+    flex: 1;
+
+    border-top: 6px solid var(--lol-gold-hover);
+    border-right: 8px solid var(--lol-gold-hover);
+    transform: skewX(35deg);
+}
+
+/* TITLE */
+.reg-hero-sec-title {
+    margin: 0;
+
+    color: var(--lol-gold-hover);
+
+    font-family: var(--lol-font-p);
+    font-size: 6rem;
+
+
+    white-space: nowrap;
+}
+
+/* RIGHT */
+.reg-hero-right-cont {
+    height: 100%;
+
+    flex: 1;
+
+    border-bottom: 6px solid var(--lol-gold-hover);
+    border-left: 8px solid var(--lol-gold-hover);
+    transform: skewX(35deg);
+}
+
+@media (max-width: 768px) {
+  .reg-hero-sec-cont{
+    height: 4vh;
+    gap: 2rem;
+  }
+}
