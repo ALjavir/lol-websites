@@ -162,8 +162,6 @@
     .all-champ-grid {
         grid-template-columns: repeat(4, 1fr);
         gap: 30px;
-
-
     }
 }
 
@@ -171,7 +169,7 @@
 @media (max-width: 900px) {
 
     #all-champ-section {
-        padding: 20px 40px 100px;
+        padding: 20px 30px 100px;
     }
 
     .all-champ-grid {
@@ -195,7 +193,7 @@
 @media (max-width: 500px) {
 
     #all-champ-section {
-        padding: 20px 20px 150px;
+        padding: 20px 30px 150px;
     }
 
     .all-champ-sort {

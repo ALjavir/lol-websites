@@ -5,6 +5,7 @@ import {
 } from "../../services/universeService";
 import Loading from "~/components/common/loading/loading";
 import RegionHeroSection from '~/components/page/regions/hero-section/hero-section';
+import AllRegionsSection from '~/components/page/regions/allRegion-section/allRegions-section';
 
 
 export default function Regions() {
@@ -42,7 +43,8 @@ export default function Regions() {
 
     return (
         <main>
-            <RegionHeroSection/>
+            <RegionHeroSection />
+            <AllRegionsSection allRegionsData={regions}/>
        </main>
    )
 

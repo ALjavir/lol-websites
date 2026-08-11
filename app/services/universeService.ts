@@ -3,14 +3,14 @@ const CLOUDFRONT_VIDEO_URL = 'https://d28xe8vt774jo5.cloudfront.net/champion-abi
 export let cachedAllRegions: any[] | null = null;
 let cachedComicsIndex: any[] | null = null;
 export const RUNETERRA_REGION_SLUGS = [
-  'ixtal','bandle-city',
-  'bilgewater', 'demacia', 'freljord',
-  'ionia', 'noxus', 'piltover',
-  'shadow-isles', 'shurima', 'void', 'zaun'
+  'bandle-city',
+  'bilgewater', 'demacia',
+  'ionia', 'ixtal', 'noxus', 'piltover',
+  'shadow-isles', 'shurima', 'mount-targon', 'freljord', 'void', 'zaun'
 ];
 
 
-export async function getUniverseChampionData(slug:string) {
+export async function getUniverseChampionData(slug: string) {
   try {
     const res = await fetch(`${UNIVERSE_BASE_URL}/champions/${slug.toLowerCase()}/index.json`);
     if (!res.ok) throw new Error(`Failed to fetch Universe lore for ${slug}`);
@@ -64,7 +64,7 @@ export async function getAllRegionsData() {
   }
 }
 
-export function getAbilityVideoUrl(key:string, spellKey:string) {
+export function getAbilityVideoUrl(key: string, spellKey: string) {
   // CloudFront requires 4-digit zero-padded IDs (e.g., 99 -> '0099')
   const paddedKey = String(key).padStart(4, '0');
   return `${CLOUDFRONT_VIDEO_URL}/${paddedKey}/ability_${paddedKey}_${spellKey.toUpperCase()}.webm`;

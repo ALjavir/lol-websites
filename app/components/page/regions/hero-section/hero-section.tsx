@@ -12,10 +12,15 @@ export default function RegionHeroSection() {
             <div className="reg-hero-main-cont">
                 <div className="reg-hero-sec-cont">
                     <div className="reg-hero-left-cont"></div>
+                    <div className="reg-hero-sec-txt" >
 
-                    <h1 className="reg-hero-sec-title">
-                        R E G I O N
-                    </h1>
+                        <h1 className="reg-hero-sec-title">
+                            REGION
+                        </h1>
+                        <p className="reg-hero-sec-subtitle">
+                            Explore the lands that shape Runeterra
+                        </p>
+                    </div>
 
                     <div className="reg-hero-right-cont"></div>
                 </div></div>

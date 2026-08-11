@@ -37,7 +37,7 @@
 .divider-line-end {
     margin: 1rem 0;
     /* background: var(--lol-gold); */
-height: 0.4rem;
+    height: 0.4rem;
     background: linear-gradient(to right,
             transparent,
             var(--lol-gold-hover),
@@ -65,9 +65,12 @@ height: 0.4rem;
     margin: 0;
 }
 
+
+
 @media (max-width: 768px) {
     .divider-container {
-    padding: 4rem 0 4rem;}
+        padding: 4rem 0 4rem;
+    }
 
     .divider-icon {
         width: 56px;
@@ -79,8 +82,21 @@ height: 0.4rem;
         height: 26px;
     }
 
+    .divider-line {
+
+        background: var(--lol-gold-hover);
+    }
+
+    .divider-text-line {
+        gap: 1rem;
+    }
+
     .divider-text {
         font-size: 1rem;
+    }
+
+    .hero-divider-img{
+        display: none;
     }
 
 }
