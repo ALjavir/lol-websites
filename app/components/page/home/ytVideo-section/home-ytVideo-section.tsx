@@ -1,5 +1,5 @@
 import MediaPopup from "~/components/common/MediaViewer/MediaViewer";
-import "./home-ytvideo-style.css";
+import "./home-ytVideo-style.css";
 import { useEffect, useRef, useState } from "react";
 import { getYoutubeID } from "~/services/youTube";
 import "~/components/common/button/button-style.css"
