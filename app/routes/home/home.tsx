@@ -84,8 +84,7 @@ export default function Home() {
           setRegions(allRegions);
         }
 
-        console.log(setVideoYT(videoDataYT))
-
+       setVideoYT(videoDataYT)
 
       } catch (error) {
         console.error('Failed to load initial Home data:', error);

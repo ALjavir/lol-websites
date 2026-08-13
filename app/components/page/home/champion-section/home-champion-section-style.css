@@ -71,10 +71,10 @@
 .hm-champion-desc {
     margin-top: 2rem;
 
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 2rem;
 
-    color: var(--lol-text);
+    color: var(--lol-muted);
 }
 
 .hm-champion-info-diff-role {
@@ -133,9 +133,8 @@
 
 .hm-champion-role-value {
     margin: 0;
-
-    color: var(--lol-text);
-
+font-weight: bold;
+    color: var(--lol-gold-hover);
     font-size: 1rem;
     text-transform: uppercase;
 }
@@ -305,6 +304,10 @@
 }
 
 @media (max-width: 500px) {
+    .indicator{
+        height: 8px;
+        width: 8px;
+    }
     .hm-champion-info {
         padding: 80px 0;
         gap: 7rem;
@@ -338,7 +341,8 @@
     }
 
     .hm-skin-indicators {
-        bottom: -33%;
+   
+        bottom: -30%;
     }
 
     .hm-img-btn-right {
@@ -355,9 +359,13 @@
     }
 
     .hm-champion-name {
-        font-size: 3rem;
+        font-size: 2rem;
         bottom: 14px;
         right: 14px;
+    }
+    .hm-champion-desc{
+        font-size: 1rem;
+        line-height: 1.8rem;
     }
 
     .hm-champion-title {

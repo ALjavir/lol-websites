@@ -10,6 +10,7 @@ import {
 export default [
   layout("./routes/layout/layout.tsx", [
     index("./routes/home/home.tsx"),
+    route("news", "./routes/lolNews/lolNews.tsx"),
     route("champions", "./routes/champions/champions.tsx"),
     route("regions", "./routes/regions/regions.tsx")
 

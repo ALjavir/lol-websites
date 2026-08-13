@@ -3,17 +3,17 @@ import "./button-style.css";
 interface ButtonBlueProps {
   link: string;
   text: string;
-  showBig: boolean;
+ 
 }
 
 export function ButtonBlue({
   link,
   text,
-  showBig,
+
 }: ButtonBlueProps) {
   return (
     <a
-      className={`ButtonBlue-btn ${showBig ? "ButtonBlue-btn-big" : ""}`}
+      className={`ButtonBlue-btn`}
       href={link}
       target="_blank"
       rel="noopener noreferrer"

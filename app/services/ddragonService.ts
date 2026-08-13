@@ -3,7 +3,7 @@ const DDRAGON_BASE_URL = 'https://ddragon.leagueoflegends.com';
 
 let cachedVersion: string | null = null;
 //let cachedPatchNotes: any[] | null = null;
-let cachedNews: any[] | null = null;
+export let cachedNews: any[] | null = null;
 export let cachedChampions: any[] | null = null;
 let cachedItems: any[] | null = null;
 let lang: string = 'en_US';

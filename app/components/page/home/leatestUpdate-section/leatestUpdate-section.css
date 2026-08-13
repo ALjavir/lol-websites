@@ -26,7 +26,7 @@
     outline: 2px solid var(--lol-gold);
     outline-offset: 4px;
 
-  
+
 }
 
 .hm-news-card-img {
@@ -61,9 +61,9 @@
 
 .hm-news-hero-card {
     max-height: 912px;
-    
-    
-     
+
+
+
 }
 
 .hm-news-hero-card .hm-news-card-overlay {
@@ -71,12 +71,13 @@
 }
 
 .hm-news-hero-card .hm-news-card-title {
-    font-size: 32px;
+    font-size: 4.2rem;
     font-weight: 500;
-    color: var(--lol-muted);
-    line-height: 1.25;
+    font-family: var(--lol-font-p);
+    color: var(--lol-gold);
+    line-height: 1;
     max-width: 620px;
-    margin: 0 0 20px 0;
+    margin: 0.5rem 0;
 }
 
 .hm-news-grid-container {
@@ -90,26 +91,28 @@
 
 .hm-news-grid-card {
     aspect-ratio: 1 / 1;
-    
+
 }
 
 
 .hm-news-grid-card .hm-news-card-title {
-    font-size: 20px;
-    max-width: 820px;
+    font-size: 2.2rem;
+    max-width: 6500px;
+    font-family: var(--lol-font-p);
     font-weight: 500;
-    color: var(--lol-muted);
-    line-height: 1.25;
-    margin: 0 0 16px 0;
+    color: var(--lol-gold);
+    line-height: 1;
+    margin: 0.5rem 0;
 }
 
 .hm-news-card-subtitle {
-    font-size: 12px;
+    font-size: 0.8rem;
     font-weight: 600;
-    color: var(--lol-text);
+    color: var(--lol-muted);
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin: 0 0 8px 0;
+    margin-bottom: 2rem;
+
 }
 
 .hm-let-upd-pth-ver {
@@ -117,6 +120,16 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--lol-play-btn-hover);
+}
+
+@media (max-width: 1024px) {
+    .hm-news-hero-card .hm-news-card-title {
+        font-size: 3rem;
+    }
+
+    .hm-news-grid-card .hm-news-card-title {
+        font-size: 2rem
+    }
 }
 
 @media (max-width: 900px) {
@@ -134,17 +147,17 @@
     }
 
     .hm-news-hero-card .hm-news-card-title {
-        font-size: 18px;
+        font-size: 1.8rem;
 
     }
 
     .hm-news-grid-card .hm-news-card-title {
-        font-size: 14px;
+        font-size: 1.2rem;
         font-weight: 600;
     }
 
     .hm-let-upd-pth-ver {
-        font-size: 10px;
+        font-size: 0.8rem;
     }
 
     .hm-news-card-subtitle {
@@ -161,4 +174,26 @@
 
         padding: 8px 18px;
     }
+
+
+}
+
+@media (max-width: 425px) {
+    .hm-news-hero-card .hm-news-card-overlay {
+        padding: 14px;
+    }
+
+    .hm-news-card-overlay {
+
+        padding: 14px;
+    }
+
+    .hm-news-card-subtitle {
+overflow: hidden;
+display: -webkit-box; /* Required for webkit-based browsers */
+-webkit-box-orient: vertical; /* Vertical orientation */
+-webkit-line-clamp: 3;
+    }
+
+
 }

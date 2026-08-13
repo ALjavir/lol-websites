@@ -151,10 +151,10 @@
 
     line-height: 2rem;
 
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 
 
-    color: var(--lol-text);
+    color: var(--lol-muted);
 
     margin-bottom: 60px;
 }
@@ -308,7 +308,7 @@
 
     .hm-map-info h1 {
         margin: 25px 0;
-        font-size: 50px;
+        font-size: 3rem;
 
         line-height: 1;
     }
@@ -317,6 +317,10 @@
         top: 41%;
         z-index: 3;
 
+    }
+    .hm-map-info p{
+        font-size: 1rem;
+        line-height: 1.8rem;
     }
 
     .hm-map-left-btn {
@@ -333,6 +337,7 @@
         height: 230px;
 
     }
+
 
 
 }
