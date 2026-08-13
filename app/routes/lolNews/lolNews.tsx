@@ -3,6 +3,7 @@ import { getLoLNews} from "../../services/ddragonService";
 
 import LolNewsHeroSec from "~/components/page/lolNews/hero/lolNews-hero-section";
 import Loading from "~/components/common/loading/loading";
+import AllLolNews from "~/components/page/lolNews/alllolnews/allLolNews";
 
 export default function LolNews() {
     
@@ -37,7 +38,8 @@ export default function LolNews() {
 
     return (
         <main>
-            <LolNewsHeroSec lolNewsData={lolNews[0]}/>
+        <LolNewsHeroSec lolNewsData={lolNews[0]} />
+        <AllLolNews alllolNewsdata={lolNews}/>
         </main>
     )
 }

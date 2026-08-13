@@ -248,7 +248,7 @@ font-weight: bold;
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: rgb(61 61 61);
+    background: rgb(255 255 255 / 50%);
     cursor: pointer;
     transition: .25s;
 }

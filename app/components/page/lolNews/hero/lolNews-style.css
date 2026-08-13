@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     overflow: hidden;
-   box-shadow: 0 0 16px 14px rgba(0, 0, 0, .4);
+    box-shadow: 0 0 16px 14px rgba(0, 0, 0, .4);
 }
 
 .lol-news-sec-bg-img {
@@ -46,7 +46,7 @@
     position: relative;
     z-index: 2;
     margin-left: 8rem;
-    padding-top: 3.5rem;
+    top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -87,7 +87,7 @@
 .lol-news-sec-card-subtitle {
     max-width: 760px;
     font-family: var(--lol-font-p);
-    font-size: clamp(3rem, 5vw, 5.8rem);
+    font-size: 5.8rem;
     font-weight: 500;
     line-height: 1;
     color: var(--lol-gold);
@@ -104,22 +104,62 @@
 }
 
 @media (max-width: 1024px) {
-   .lol-news-sec-bg-img {
-    height: 100%;
-   }
+    .lol-news-sec-card {
+
+        margin-left: 6rem;
+        top: 6rem;
+
+    }
+
+    .lol-news-sec-bg-img {
+        height: 100%;
+    }
+
+    .lol-news-sec-card-subtitle {
+
+        font-size: 3rem;
+    }
 }
 
 @media (max-width: 768px) {
+
+
     .lol-news-sec-card {
 
-    margin-left: 4rem;}
-  .lol-news-sec-header{
-    font-size: 0.6rem;
-  }
-  .let-add{
-    font-size: 0.6rem;
-  }
-  .lol-news-sec-card-title {
-    font-size: 1rem;
-  }
+        margin-left: 4rem;
+        top: 4rem;
+    }
+
+    .lol-news-sec-header {
+        font-size: 0.6rem;
+    }
+
+    .let-add {
+        font-size: 0.6rem;
+    }
+
+    .lol-news-sec-card-title {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .lol-news-sec-card {
+        margin-left: 1rem;
+    }
+
+    .lol-news-sec-card {
+
+        margin-left: 2rem;
+    }
+
+    .lol-news-sec-card-title {
+        font-size: 0.8rem; 
+        margin: 0.5rem 1rem 2rem 0rem
+    }
+
+    .lol-news-sec-card-subtitle {
+       
+        font-size: 2rem;
+    }
 }

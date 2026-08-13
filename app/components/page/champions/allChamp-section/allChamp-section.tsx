@@ -92,39 +92,39 @@ export default function ALlChampSection({
 
 
             {sortBy === "all" && (
-                   <div className='all-chm-continer'>
-      <Divider
-        icon={champDivider}
-       text={`CHAMPIONS | ${allChampData.length}`}
-      />
+                <div className='all-chm-continer'>
+                    <Divider
+                        icon={champDivider}
+                        text={`CHAMPIONS | ${allChampData.length}`}
+                    />
 
-               
-                <div className="all-champ-grid">
 
-                    {allChampData.map((champion) => (
-                        <div
-                            className="all-champ-card"
-                            key={champion.id}
-                        >
-                            <img
-                                src={ddragonAssets.getSplashArt(champion.id)}
-                                alt={champion.name}
-                            />
-                            <div className='all-ch-info-card'>
-                                <h1>{champion.name}</h1>
-                                <div className='all-ch-role-card'>
-                                    <p>
-                                        {champion.tags.join(" // ")}
-                                    </p>
-                                    <p>❯</p>
+                    <div className="all-champ-grid">
 
+                        {allChampData.map((champion) => (
+                            <div
+                                className="all-champ-card"
+                                key={champion.id}
+                            >
+                                <img
+                                    src={ddragonAssets.getSplashArt(champion.id)}
+                                    alt={champion.name}
+                                />
+                                <div className='all-ch-info-card'>
+                                    <h1>{champion.name}</h1>
+                                    <div className='all-ch-role-card'>
+                                        <p>
+                                            {champion.tags.join(" // ")}
+                                        </p>
+                                        <p>❯</p>
+
+                                    </div>
                                 </div>
+
                             </div>
 
-                        </div>
-
-                    ))}
-    </div>
+                        ))}
+                    </div>
                 </div>
 
             )}
@@ -136,7 +136,7 @@ export default function ALlChampSection({
                     {roleChampData.map((role) => (
 
                         <div
-                           className="all-champ-role"
+                            className="all-champ-role"
                             key={role.role}
                         >
                             <Divider

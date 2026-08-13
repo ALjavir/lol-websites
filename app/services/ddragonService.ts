@@ -59,6 +59,7 @@ export async function getLoLNews(category = 'allNewsEn'): Promise<any[]> {
     const newsArray = Array.isArray(data) ? data : Object.values(data);
 
     if (category === 'allNewsEn') {
+     
       cachedNews = newsArray;
     }
 
