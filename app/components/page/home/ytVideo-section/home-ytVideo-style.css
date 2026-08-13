@@ -293,7 +293,7 @@ outline: 2px solid var(--lol-gold);
     }
 
     .hm-yt-card {
-        width: clamp(320px, 48vw, 369px);
+        width: clamp(310px, 48vw, 369px);
     }
 
     .hm-yt-slider {

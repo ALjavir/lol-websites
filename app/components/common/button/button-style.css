@@ -127,7 +127,9 @@
 }
 @media (max-width: 768px) {
 
-   
+   .ButtonGold-btn{
+    outline: 1px solid var(--lol-gold);
+   }
 
   .gold-btn-arrow {
     font-size: 20px;
