@@ -1,7 +1,7 @@
 #lol-news-sec {
     position: relative;
     width: 100%;
-    min-height: clamp(520px, 68vw, 760px);
+    min-height: clamp(600px, 68vw, 760px);
     display: flex;
     align-items: center;
     overflow: hidden;

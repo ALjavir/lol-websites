@@ -1,6 +1,9 @@
 #all-champ-section {
     position: relative;
     width: 100%;
+    max-width: 1600px;
+    box-sizing: border-box;
+    margin-inline: auto;
     padding: 20px 5vw 200px;
 }
 
@@ -14,53 +17,34 @@
 
 }
 
-.all-champ-sort button {
-    position: relative;
-    box-shadow: 0 0 16px 14px rgba(0, 0, 0, .4);
-    outline: 2px solid var(--lol-gold);
-    outline-offset: 4px;
-    padding: 12px 32px;
-    color: var(--lol-muted);
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    cursor: pointer;
-    transition: .3s;
-}
 
-.all-champ-sort button:hover {
-    color: var(--lol-bg);
-    background-color: var(--lol-gold-hover);
-    box-shadow: 0 0 25px rgba(200, 170, 110, 0.7);
-
-}
-
-.all-champ-sort button.active {
-    color: var(--lol-bg);
-    background: var(--lol-gold);
-}
 
 
 
 
 .all-champ-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 34px;
 }
 
 
 .all-champ-card {
-     box-shadow: 0 0 16px 14px rgba(0, 0, 0, .4);
+    box-shadow: 0 0 16px 14px rgba(0, 0, 0, .4);
     outline: 2px solid var(--lol-gold);
     outline-offset: 4px;
     position: relative;
     aspect-ratio: 3 / 4;
     overflow: hidden;
     cursor: pointer;
-    transition:
-        transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
-        border-color 0.4s ease;
+        transition:
+        transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+        filter 0.5s ease;
+}
+
+.all-champ-card:hover {
+
+    transform: translateY(-8px)
 }
 
 .all-champ-card img {
@@ -108,7 +92,7 @@
     font-weight: 500;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-        transition:
+    transition:
         transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
         filter 0.5s ease;
     flex-direction: column;
@@ -123,7 +107,7 @@
 }
 
 .all-ch-role-card {
-        transition:
+    transition:
         transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
         filter 0.5s ease;
     font-family: var(--lol-font-t);
@@ -160,7 +144,7 @@
 
 @media (max-width: 1024px) {
     .all-champ-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 30px;
     }
 }
@@ -169,15 +153,16 @@
 @media (max-width: 900px) {
 
     #all-champ-section {
-        padding: 20px 30px 100px;
+        padding: 20px 50px 100px;
     }
 
     .all-champ-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
 
 
     }
+
     .all-champ-card img {
         filter: brightness(1);
     }
@@ -193,7 +178,7 @@
 @media (max-width: 500px) {
 
     #all-champ-section {
-        padding: 20px 30px 150px;
+        padding: 20px 45px 150px;
     }
 
     .all-champ-sort {
@@ -207,20 +192,21 @@
     }
 
     .all-champ-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
 
-        gap: 25px;
+        gap: 35px;
     }
 
     .all-ch-info-card {
 
-        font-size: 1.1rem;
+        font-size: 1.4rem;
+    }
+.all-champ-card {
+
+    aspect-ratio: 3 / 3.5;
     }
 
-    .all-ch-role-card {
-        font-size: 0.5rem;
-    }
-        .all-champ-card img {
+    .all-champ-card img {
         filter: brightness(1);
     }
 

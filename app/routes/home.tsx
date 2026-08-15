@@ -10,13 +10,13 @@ import {
   getLoLNews,
   getAllChampions,
   getChampionDetails
-} from "../../services/ddragonService";
+} from "../services/ddragonService";
 
 import {
   getAllRegionsData
-} from "../../services/universeService";
+} from "../services/universeService";
 
-import { getLoLYouTubeVideos, type YouTubeVideo } from "../../services/youTube"
+import { getLoLYouTubeVideos, type YouTubeVideo } from "../services/youTube"
 
 import HomeHeroSection from '~/components/page/home/hero-section/hero-section';
 import HomeLeatestUpdateSection from '~/components/page/home/leatestUpdate-section/leatestUpdate-section';

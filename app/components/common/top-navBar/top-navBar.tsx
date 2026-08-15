@@ -16,7 +16,7 @@ export default function TopNavBar() {
     { name: "NEWS", path: "/news" },
     { name: "CHAMPIONS", path: "/champions" },
     { name: "REGIONS", path: "/regions" },
-    { name: "SPELLS", path: "/SPELLS" },
+    { name: "COMICS", path: "/comics" },
    
   ];
 

@@ -1,7 +1,8 @@
 import { useMemo, useState } from "react";
-import { ButtonBlue } from "~/components/common/button/button";
+import "../../../common/button/button-style.css"
 import DateConverter from "~/components/common/converter/date";
 import "./allLolNews-style.css"
+import { ButtonBlue } from "~/components/common/button/button";
 interface AllLolNewsProps {
     alllolNewsdata: any[]
 }
@@ -10,7 +11,7 @@ interface AllLolNewsProps {
 export default function AllLolNews({ alllolNewsdata }: AllLolNewsProps) {
 
 
-    const [sortBy, setSortBy] = useState("all");
+    const [sortBy, setSortBy] = useState("all"); 
     const [displayedNews, setdisplayedNews] = useState<any[]>(alllolNewsdata);
 
 
@@ -95,7 +96,7 @@ export default function AllLolNews({ alllolNewsdata }: AllLolNewsProps) {
         <section id="all-lol-news">
 
 
-            <div className="all-news-filter">
+            <div className="all-news-filter-btn gold-sort-btn">
                 {lolnewsDataMap.map((btnData) => (
                     <button
                         key={btnData.cat}
@@ -140,6 +141,7 @@ export default function AllLolNews({ alllolNewsdata }: AllLolNewsProps) {
                             </p>
 
                             <ButtonBlue
+                                fontSize={0.8}
                                 link={news.url}
                                 text="READ MORE"
 

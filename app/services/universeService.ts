@@ -1,6 +1,6 @@
 const UNIVERSE_BASE_URL = 'https://universe-meeps.leagueoflegends.com/v1/en_us';
 const CLOUDFRONT_VIDEO_URL = 'https://d28xe8vt774jo5.cloudfront.net/champion-abilities';
-export let cachedAllRegions: any[] | null = null;
+let cachedAllRegions: any[] | null = null;
 let cachedComicsIndex: any[] | null = null;
 export const RUNETERRA_REGION_SLUGS = [
   'bandle-city',
@@ -73,14 +73,15 @@ export function getAbilityVideoUrl(key: string, spellKey: string) {
 
 
 export async function getAllLoLComics() {
-  if (cachedComicsIndex) return cachedComicsIndex;
+ if (cachedComicsIndex) return cachedComicsIndex;
 
   try {
     const res = await fetch(`${UNIVERSE_BASE_URL}/comics/index.json`);
     if (!res.ok) throw new Error('Failed to fetch comics list');
 
     const data = await res.json();
-    cachedComicsIndex = data.comics || [];
+    cachedComicsIndex =[data.header, data.sections] ;
+   
     return cachedComicsIndex;
   } catch (error) {
     console.error('Error fetching comics:', error);
@@ -88,10 +89,7 @@ export async function getAllLoLComics() {
   }
 }
 
-/**
- * 2. Fetch specific comic series metadata
- * @param slug - e.g. 'zed', 'lux', 'ashe-warmother'
- */
+
 export async function getComicDetails(slug: string) {
   try {
     const res = await fetch(`${UNIVERSE_BASE_URL}/comics/${slug.toLowerCase()}/index.json`);
@@ -104,11 +102,7 @@ export async function getComicDetails(slug: string) {
   }
 }
 
-/**
- * 3. Fetch image pages for a specific comic issue
- * @param slug - e.g. 'zed'
- * @param issueNumber - e.g. 1
- */
+
 export async function getComicIssuePages(slug: string, issueNumber = 1) {
   try {
     const res = await fetch(

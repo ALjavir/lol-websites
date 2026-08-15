@@ -1,0 +1,217 @@
+/* ========================================
+   COMIC HERO
+======================================== */
+
+#comic-hero-sec {
+    position: relative;
+    width: 100%;
+    min-height: 650px;
+
+    display: flex;
+        align-items: flex-end;
+
+
+    overflow: hidden;
+    isolation: isolate;
+ box-shadow: 0 0 16px 14px rgba(0, 0, 0, .4);
+  
+}
+
+
+#comic-hero-sec > img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    z-index: -2;
+
+    transition: transform 0.8s ease;
+}
+
+
+#comic-hero-sec::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.90) 0%,
+            rgba(0, 0, 0, 0.70) 30%,
+            rgba(0, 0, 0, 0.30) 65%,
+            rgba(0, 0, 0, 0.10) 100%
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.05) 45%,
+            rgba(0, 0, 0, 0.80) 100%
+        );
+
+    z-index: -1;
+}
+
+/* Content */
+.com-hero-contant {
+    width: min(650px, 45%);
+
+    margin-left: 8vw;
+
+    padding: 120px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    position: relative;
+    z-index: 2;
+}
+
+/* Title */
+.com-hero-title {
+    margin: 0 0 10px;
+
+    max-width: 760px;
+    font-family: var(--lol-font-p);
+    font-size: 5.8rem;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--lol-gold);
+    text-wrap: balance;
+}
+
+/* Description */
+.com-hero-dis {
+    margin: 0 0 60px;
+
+    max-width: 520px;
+
+    color: var(--lol-muted);
+
+
+    font-size: 1.05rem;
+    line-height: 1.7;
+    font-weight: 400;
+
+    opacity: 0.85;
+}
+
+
+
+#comic-hero-sec:hover > img {
+    transform: scale(1.025);
+}
+
+
+
+
+
+
+
+@media  (max-width: 1024px) {
+
+    #comic-hero-sec {
+        min-height: 560px;
+    }
+
+    #comic-hero-sec > img {
+        object-position: 60% center;
+    }
+
+    .com-hero-contant {
+        width: 60%;
+        margin-left: 6vw;
+        padding: 90px 0;
+    }
+
+    .com-hero-title {
+        font-size: 4rem;
+    
+    }
+
+    .com-hero-dis {
+        max-width: 430px;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 40px;
+    }
+}
+
+
+
+
+@media (max-width: 768px) {
+
+    #comic-hero-sec {
+        min-height: 650px;
+
+        align-items: flex-end;
+    }
+
+    #comic-hero-sec > img {
+        object-position: 60% center;
+    }
+
+
+    #comic-hero-sec::after {
+        background:
+            linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.15) 20%,
+                rgba(0, 0, 0, 0.55) 50%,
+                rgba(0, 0, 0, 0.95) 100%
+            );
+    }
+
+    .com-hero-contant {
+        width: 100%;
+
+        margin-left: 0;
+
+        padding: 40px 7vw 60px;
+
+        align-items: flex-start;
+    }
+
+    .com-hero-title {
+        font-size: 4rem;
+        line-height: 0.95;
+
+   
+    }
+
+    .com-hero-dis {
+        max-width: 100%;
+
+      
+        line-height: 1.5;
+
+     
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    #comic-hero-sec {
+        min-height: 600px;
+    }
+
+    .com-hero-contant {
+        padding: 35px 8vw 80px;
+    }
+
+    .com-hero-title {
+        font-size:3rem;
+    }
+    .com-hero-dis {
+        font-size: 1rem;
+    }
+
+  
+}

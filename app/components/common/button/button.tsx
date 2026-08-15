@@ -3,17 +3,18 @@ import "./button-style.css";
 interface ButtonBlueProps {
   link: string;
   text: string;
- 
+  fontSize?: number;
 }
 
 export function ButtonBlue({
   link,
   text,
-
+  fontSize, 
 }: ButtonBlueProps) {
   return (
     <a
-      className={`ButtonBlue-btn`}
+      style={{ fontSize: `${fontSize}rem` }}
+      className="blue-btn"
       href={link}
       target="_blank"
       rel="noopener noreferrer"
@@ -22,7 +23,6 @@ export function ButtonBlue({
     </a>
   );
 }
-
 
 interface ButtonGoldProps {
     link: string;
@@ -33,7 +33,7 @@ interface ButtonGoldProps {
 export  function ButtonGold({ link, text }: ButtonGoldProps) {
     return (
         <a
-          className="ButtonGold-btn"
+          className="gold-btn"
           href={link}
           target="_blank"
           rel="noopener noreferrer"

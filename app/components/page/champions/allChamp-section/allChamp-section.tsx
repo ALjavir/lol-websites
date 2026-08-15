@@ -7,7 +7,7 @@ import tankDivider from '~/assets/image/divider/role_icon_tank.png';
 import marksmanDivider from '~/assets/image/divider/role_icon_marksman.png';
 import { ddragonAssets } from "~/services/ddragonService";
 import "./allChamp-style.css";
-
+import "../../../common/button/button-style.css"
 
 
 interface ALlChampSectionProps {
@@ -72,7 +72,7 @@ export default function ALlChampSection({
     return (
         <section id="all-champ-section">
 
-            <div className="all-champ-sort">
+            <div className="all-champ-sort gold-sort-btn">
 
                 <button
                     className={sortBy === "all" ? "active" : ""}

@@ -93,7 +93,7 @@ export default function HomeChampionSection({ featuredChampions }: HomeChampionS
                         </div>
                         <div className="hm-champ-read-btn">
 
-                            <ButtonBlue link='' text="LEARN MORE" showBig={true} />
+                            <ButtonBlue link='' text="LEARN MORE"  />
                         </div>
 
                     </div>

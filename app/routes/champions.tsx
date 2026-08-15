@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {
     cachedChampions,
     getAllChampions
-} from "../../services/ddragonService";
+} from "../services/ddragonService";
 import Loading from "~/components/common/loading/loading";
 import ChampHeroSection from "~/components/page/champions/hero-section/hero-section";
 import ALlChampSection from '~/components/page/champions/allChamp-section/allChamp-section';

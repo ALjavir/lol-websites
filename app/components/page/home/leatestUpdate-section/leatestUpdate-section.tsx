@@ -37,7 +37,7 @@ export default function HomeLeatestUpdateSection({ leatestNews }: LeatestUpdateS
                             <h1 className="hm-news-card-title"> {item.title}</h1>
                             <p className="hm-news-card-subtitle">{item.description.body}</p>
                     
-                            <ButtonBlue link={item.url} text="READ MORE" />
+                            <ButtonBlue fontSize={0.8} link={item.url} text="READ MORE" />
                         </div>
                     </div>
                 ))}

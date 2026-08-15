@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getLoLNews} from "../../services/ddragonService";
+import { getLoLNews} from "../services/ddragonService";
 
 import LolNewsHeroSec from "~/components/page/lolNews/hero/lolNews-hero-section";
 import Loading from "~/components/common/loading/loading";

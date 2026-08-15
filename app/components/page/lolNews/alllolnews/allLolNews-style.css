@@ -2,7 +2,7 @@
     width: 100%;
     max-width: 1500px;
     margin: 0 auto;
-    padding: 80px 50px 120px;
+    padding: 10rem 50px 120px;
 }
 
 
@@ -10,52 +10,17 @@
    FILTER BUTTONS
 ========================= */
 
-.all-news-filter {
+.all-news-filter-btn {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 30px;
 
-    margin-bottom: 55px;
+    margin-bottom: 6rem;
 }
 
-.all-news-filter button {
-    position: relative;
 
-    padding: 12px 22px;
-
-    background: transparent;
-    border: 1px solid rgba(200, 170, 110, 0.35);
-
-    color: rgba(255, 255, 255, 0.65);
-
-    font-family: "Cinzel", serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-
-    cursor: pointer;
-
-    transition:
-        color 0.3s ease,
-        background 0.3s ease,
-        border-color 0.3s ease,
-        transform 0.3s ease;
-}
-
-.all-news-filter button:hover {
-    color: var(--lol-gold);
-    border-color: var(--lol-gold);
-
-    transform: translateY(-2px);
-}
-
-.all-news-filter button.active {
-    color: #050505;
-    background: var(--lol-gold);
-    border-color: var(--lol-gold);
-}
 
 
 /* =========================
@@ -67,7 +32,7 @@
 
     grid-template-columns: repeat(3, minmax(0, 1fr));
 
-    gap: 28px;
+    gap: 34px;
 }
 
 
@@ -77,29 +42,21 @@
 
 .all-news-card {
     position: relative;
-
+    outline: 2px solid var(--lol-gold);
+    outline-offset: 4px;
     min-width: 0;
 
     background: #0b0b0b;
 
-    border: 1px solid rgba(200, 170, 110, 0.25);
+   
 
     overflow: hidden;
-
     transition:
-        transform 0.4s ease,
-        border-color 0.4s ease,
-        box-shadow 0.4s ease;
+        transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+        filter 0.5s ease;
 }
 
-.all-news-card:hover {
-    transform: translateY(-6px);
 
-    border-color: rgba(200, 170, 110, 0.7);
-
-    box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.45);
-}
 
 
 /* =========================
@@ -147,6 +104,10 @@
         filter 0.5s ease;
 }
 
+
+.all-news-card:hover {
+    transform: translateY(-8px);}
+
 .all-news-card:hover .all-news-image img {
     transform: scale(1.06);
     filter: brightness(1);
@@ -167,10 +128,10 @@
 
     color: var(--lol-gold);
 
-    font-family: "Cinzel", serif;
-    font-size: 10px;
+    font-family: var(--lol-font-t);
+    font-size: 14px;
     font-weight: 700;
-
+    text-transform: uppercase;
     letter-spacing: 2px;
 }
 
@@ -188,7 +149,7 @@
 
     color: rgba(255, 255, 255, 0.45);
 
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 600;
 
     letter-spacing: 1.5px;
@@ -236,7 +197,7 @@
 @media (max-width: 1100px) {
 
     #all-lol-news {
-        padding: 70px 30px 100px;
+        padding: 8rem 30px 100px;
     }
 
     .all-news-data-grid {
@@ -248,7 +209,7 @@
 @media (max-width: 650px) {
 
     #all-lol-news {
-        padding: 50px 18px 80px;
+        padding: 6rem 30px 80px;
     }
 
     .all-news-filter {
@@ -263,11 +224,14 @@
 
     .all-news-data-grid {
         grid-template-columns: 1fr;
-        gap: 22px;
+        gap: 26px;
     }
 
     .all-news-info {
         padding: 20px;
+    }
+    .all-news-category {
+        font-size: 12px;
     }
 
     .all-news-info h2 {

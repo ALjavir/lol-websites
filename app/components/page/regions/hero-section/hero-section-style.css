@@ -163,12 +163,16 @@
 @media (max-width: 768px) {
     #reg-hero-section {
 
-        height: 80vh;
+        height: 70vh;
 
     }
 
-
-
+.reg-hero-right-cont{
+    opacity: 0;
+}
+.reg-hero-left-cont{
+    opacity: 0;
+}
         .reg-hero-sec-title {
         font-size: 4rem;
     }
