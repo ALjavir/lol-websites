@@ -3,6 +3,8 @@ import "../../../common/button/button-style.css"
 import DateConverter from "~/components/common/converter/date";
 import "./allLolNews-style.css"
 import { ButtonBlue } from "~/components/common/button/button";
+import { getOfficialLoLNewsUrl } from "../../../../services/getUrlService";
+
 interface AllLolNewsProps {
     alllolNewsdata: any[]
 }
@@ -142,7 +144,7 @@ export default function AllLolNews({ alllolNewsdata }: AllLolNewsProps) {
 
                             <ButtonBlue
                                 fontSize={0.8}
-                                link={news.url}
+                                link={getOfficialLoLNewsUrl( news.action.payload.url)}
                                 text="READ MORE"
 
                             />

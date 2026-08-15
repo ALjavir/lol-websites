@@ -1,6 +1,7 @@
 import { Divider } from "~/components/common/divider/divider";
 import mapDivider from '~/assets/image/divider/featured-battlefield.png';
 import"./allRegions-style.css"
+import { getRegionUrl } from "~/services/getUrlService";
 
 
 interface AllRegionsSectionProps {
@@ -21,10 +22,14 @@ export default function AllRegionsSection({ allRegionsData }: AllRegionsSectionP
                 {
                     allRegionsData.map(
                         (data) =>
-                            <div className='reg-data-card'>
+                            <a className='reg-data-card'
+                               href={getRegionUrl(data.id)}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                            >
                                 <img src={data.faction.image.uri} alt={data.faction.image.title} />
                                 <h1> {data.faction.name}</h1>
-                            </div>
+                            </a>
                     )
                 }
 

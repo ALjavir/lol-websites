@@ -4,6 +4,7 @@ import "./home-map-style.css";
 
 import MediaPopup from "~/components/common/MediaViewer/MediaViewer";
 import { ButtonBlue } from "~/components/common/button/button";
+import { getRegionUrl } from "~/services/getUrlService";
 
 interface HomeMapSectionProps {
     region: any[];
@@ -84,7 +85,7 @@ export default function HomeMapSection({ region }: HomeMapSectionProps) {
                     <p className="hm-map-desc">
                         {shortDescription}
                     </p>
-                    <ButtonBlue link={""} text={"LEARN MORE"} showBig={true} />             </div>
+                    <ButtonBlue link={getRegionUrl(region[currentIndex].id)} text={"LEARN MORE"} />             </div>
 
             </div>
 

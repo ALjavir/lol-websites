@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import {  ButtonBlue } from "~/components/common/button/button";
 import MediaViewer from "~/components/common/MediaViewer/MediaViewer";
 import MediaPopup from "~/components/common/MediaViewer/MediaViewer";
+import { getChempionUrl } from "~/services/getUrlService";
 
 interface HomeChampionSectionProps {
     featuredChampions: any;
@@ -93,7 +94,7 @@ export default function HomeChampionSection({ featuredChampions }: HomeChampionS
                         </div>
                         <div className="hm-champ-read-btn">
 
-                            <ButtonBlue link='' text="LEARN MORE"  />
+                            <ButtonBlue link={getChempionUrl(featuredChampions.id)} text="LEARN MORE"  />
                         </div>
 
                     </div>

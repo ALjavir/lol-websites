@@ -1,7 +1,7 @@
 import DateConverter from "~/components/common/converter/date";
 import "./leatestUpdate-section.css"
 import { ButtonBlue } from "~/components/common/button/button";
-
+import { getOfficialLoLNewsUrl } from "../../../../services/getUrlService";
 
 interface LeatestUpdateSectionProps {
     //leatestPatch: any;
@@ -21,7 +21,7 @@ export default function HomeLeatestUpdateSection({ leatestNews }: LeatestUpdateS
 
                     <h1 className="hm-news-card-title">{leatestNews[0].title}</h1>
                     <p className="hm-news-card-subtitle">{leatestNews[0].description.body}</p>
-                    <ButtonBlue link="{item.url}" text="READ MORE"  />
+                    <ButtonBlue link={getOfficialLoLNewsUrl( leatestNews[0].action.payload.url)} text="READ MORE"  />
                 </div>
             </div>
 
@@ -37,7 +37,7 @@ export default function HomeLeatestUpdateSection({ leatestNews }: LeatestUpdateS
                             <h1 className="hm-news-card-title"> {item.title}</h1>
                             <p className="hm-news-card-subtitle">{item.description.body}</p>
                     
-                            <ButtonBlue fontSize={0.8} link={item.url} text="READ MORE" />
+                            <ButtonBlue fontSize={0.8} link={getOfficialLoLNewsUrl( item.action.payload.url)} text="READ MORE" />
                         </div>
                     </div>
                 ))}

@@ -17,6 +17,7 @@ interface ALlChampSectionProps {
 
 import { useMemo, useState } from "react";
 import { Divider } from '~/components/common/divider/divider';
+import { getChempionUrl } from '~/services/getUrlService';
 
 export default function ALlChampSection({
     allChampData
@@ -102,9 +103,12 @@ export default function ALlChampSection({
                     <div className="all-champ-grid">
 
                         {allChampData.map((champion) => (
-                            <div
+                            <a
                                 className="all-champ-card"
                                 key={champion.id}
+                                   href={getChempionUrl(champion.id)}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                             >
                                 <img
                                     src={ddragonAssets.getSplashArt(champion.id)}
@@ -121,7 +125,7 @@ export default function ALlChampSection({
                                     </div>
                                 </div>
 
-                            </div>
+                            </a>
 
                         ))}
                     </div>
@@ -148,9 +152,12 @@ export default function ALlChampSection({
 
                                 {role.data.map((champion) => (
 
-                                    <div
+                                    <a
                                         className="all-champ-card"
                                         key={champion.id}
+                                        href={getChempionUrl(champion.id)}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                     >
 
 
@@ -170,7 +177,7 @@ export default function ALlChampSection({
                                             </div>
                                         </div>
 
-                                    </div>
+                                    </a>
 
                                 ))}
 

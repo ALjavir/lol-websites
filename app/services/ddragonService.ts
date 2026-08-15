@@ -17,7 +17,7 @@ export async function getLatestPatchVersion(): Promise<string> {
     if (!res.ok) throw new Error("Failed to fetch game versions");
 
     const versions: string[] = await res.json();
-    cachedVersion = versions[0]; // Cache the latest version string
+    cachedVersion = versions[0]; 
     return cachedVersion;
   } catch (error) {
     console.error("Error fetching patch version:", error);
@@ -70,9 +70,8 @@ export async function getLoLNews(category = 'allNewsEn'): Promise<any[]> {
   }
 }
 
-/**
- * 3. Get All Champions (Cached)
- */
+
+
 export async function getAllChampions(): Promise<any[]> {
   if (cachedChampions) return cachedChampions;
 
@@ -92,9 +91,7 @@ export async function getAllChampions(): Promise<any[]> {
   }
 }
 
-/**
- * 4. Get Single Champion Details (Reuses activeVersion)
- */
+
 export async function getChampionDetails(championId: string): Promise<any> {
   try {
     const activeVersion = await getLatestPatchVersion();
@@ -109,9 +106,7 @@ export async function getChampionDetails(championId: string): Promise<any> {
   }
 }
 
-/**
- * 5. Get All Items (Cached)
- */
+
 export async function getAllItems(): Promise<any[]> {
   if (cachedItems) return cachedItems;
 
@@ -129,9 +124,8 @@ export async function getAllItems(): Promise<any[]> {
   }
 }
 
-/**
- * Asset Helpers
- */
+
+
 export const ddragonAssets = {
   getSquareIcon: (version: string, imageName: string) => `${DDRAGON_BASE_URL}/cdn/${version}/img/champion/${imageName}`,
   getItemIcon: (version: string, itemId: string) => `${DDRAGON_BASE_URL}/cdn/${version}/img/item/${itemId}.png`,
