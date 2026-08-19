@@ -9,11 +9,12 @@ interface LeatestUpdateSectionProps {
 }
 export default function HomeLeatestUpdateSection({ leatestNews }: LeatestUpdateSectionProps) {
 
+   
     return (
         <section id="hm-let-upd-sec">
 
             <div className="hm-news-card hm-news-hero-card">
-                <img className="hm-news-card-img hm-news-hero-card-img" src={leatestNews[0].imageMedia.url} alt="NO IMAGE FOUND" />
+                <img className="hm-news-card-img hm-news-hero-card-img" src={leatestNews[0].media.url} alt="NO IMAGE FOUND" />
                 <div className="hm-news-card-overlay">
                     <p className="hm-let-upd-pth-ver">
                         {leatestNews[0].category.title} | {DateConverter(leatestNews[0].publishedAt)}

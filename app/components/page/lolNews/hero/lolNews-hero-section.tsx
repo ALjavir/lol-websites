@@ -1,6 +1,7 @@
 import { ButtonBlue } from "~/components/common/button/button"
 import DateConverter from "~/components/common/converter/date"
 import"./lolNews-style.css"
+import { getOfficialLoLNewsUrl } from "~/services/getUrlService"
 
 interface lolNewsSecPops {
     lolNewsData: any
@@ -17,7 +18,7 @@ export default function LolNewsHeroSec({ lolNewsData }: lolNewsSecPops) {
                 </p>
                 <h1 className="lol-news-sec-card-subtitle">{lolNewsData.title}</h1>
                 <p className="lol-news-sec-card-title">{lolNewsData.description.body}</p>
-                <ButtonBlue link="{item.url}" text="READ MORE"  />
+                <ButtonBlue link={getOfficialLoLNewsUrl(lolNewsData.action.payload.url)} text="READ MORE"  />
             </div>
         </section>
     )

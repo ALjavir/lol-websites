@@ -53,9 +53,10 @@ export default function Home() {
           getLoLYouTubeVideos()
         ]);
 
-        // const videoDataYT = await getLoLYouTubeVideos()
+        //  const videoDataYT = await getLoLYouTubeVideos()
+        console.log(setlolNews(lolNewsData))
 
-        setlolNews([lolNewsData[0], lolNewsData[1], lolNewsData[2]]);
+        setlolNews(lolNewsData.slice(0,3));
         const bestChampions = [
           "Ahri",
           "Sivir",
@@ -85,6 +86,8 @@ export default function Home() {
         }
 
        setVideoYT(videoDataYT)
+ 
+  
 
       } catch (error) {
         console.error('Failed to load initial Home data:', error);
@@ -129,7 +132,7 @@ export default function Home() {
         text="CATEGORY"
       />
       <CategorySection />
-   
+
     </main>
   );
 }

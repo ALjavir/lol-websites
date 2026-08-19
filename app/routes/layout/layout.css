@@ -22,7 +22,7 @@
     background-position: center;
 
     z-index: -2;
-        opacity: .20;          /* <- very important */
+        opacity: .20;          
     /* filter:
         brightness(.45)
         saturate(.75)
