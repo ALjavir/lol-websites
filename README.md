@@ -13,15 +13,19 @@ An interactive, high-performance League of Legends web application and lore port
 
 ---
 
-## 🌐 APIs Used
+## 🌐 APIs & Endpoints
 
-| API / Data Source | Service Purpose | Retrieved Data |
+| Service / Provider | Resource / Action | Endpoint / URL Structure |
 | :--- | :--- | :--- |
-| **Data Dragon (Riot Games)** | Primary Champion Engine | Roster metadata, stats, ability breakdowns, splash art, and thumbnails |
-| **Universe Meeps API** | Lore & Faction Explorer | Region histories, faction emblems, regional champion mappings, and artwork |
-| **Comic Service API** | Graphic Novel Vault | Official LoL digital comic issues, cover assets, and issue synopses |
-| **RSS-to-JSON Service** | News Aggregator | Real-time patch notes, dev logs, and esports news feeds |
-| **YouTube Embed API** | Media Lightbox | Custom embedded streaming for champion themes, login loops, and cinematics |
+| **Data Dragon** | Latest Patch Version | `https://ddragon.leagueoflegends.com/api/versions.json` |
+| **Data Dragon** | All Champions Roster | `https://ddragon.leagueoflegends.com/cdn/{version}/data/en_US/champion.json` |
+| **Data Dragon** | Detailed Champion Info | `https://ddragon.leagueoflegends.com/cdn/{version}/data/en_US/champion/{championId}.json` |
+| **Data Dragon** | Champion Splash Assets | `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/{championId}_{skinNum}.jpg` |
+| **Universe Meeps** | Featured Regions Index | `https://universe-meeps.leagueoflegends.com/v1/en_us/featured_regions/index.json` |
+| **Universe Meeps** | Single Region & Lore Data | `https://universe-meeps.leagueoflegends.com/v1/en_us/regions/{region_slug}.json` |
+| **Universe Meeps** | Digital Comics Index | `https://universe-meeps.leagueoflegends.com/v1/en_us/comics/index.json` |
+| **RSS-to-JSON** | Patch Notes & News Feed | `https://api.rss2json.com/v1/api.json?rss_url={rss_feed_url}` |
+| **YouTube Embed** | Video & Media Lightbox | `https://www.youtube.com/embed/{videoId}` |
 
 ---
 
