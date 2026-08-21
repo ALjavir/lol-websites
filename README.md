@@ -28,6 +28,20 @@ An interactive, high-performance League of Legends web application and lore port
 | **YouTube Embed** | Video & Media Lightbox | `https://www.youtube.com/embed/{videoId}` |
 
 ---
+### 📸 Screenshots
+
+| Splash Screen | Authentication Pages | Home Dashboard |
+|:---:|:---:|:---:|
+| <img src="https://github.com/user-attachments/assets/872aa5bf-5f15-410e-89dc-e590ad0ae4f5" width="250"> | <img src="https://github.com/user-attachments/assets/33a243ab-9091-4bfe-994a-b1093e281fcb" width="320"> | <img src="https://github.com/user-attachments/assets/fbed6c5b-366b-497b-b932-7c89df5d8a90" width="320"> |
+
+| Schedule & Assessment | Academic Calendar | Academic Results |
+|:---:|:---:|:---:|
+| <img src="https://github.com/user-attachments/assets/649f0c61-e774-4762-9ab0-a0f84281530d" width="320"> | <img src="https://github.com/user-attachments/assets/b6265ee4-b9dc-43c5-ac2f-5f2f3b6b350e" width="320"> | <img src="https://github.com/user-attachments/assets/f1d4ad98-654b-4f4f-b5f1-2589ef6445ab" width="320"> |
+
+| Financial Account | Announcements |
+|:---:|:---:|
+| <img src="https://github.com/user-attachments/assets/d4ecedec-e5db-4732-bbf3-ccea2ae5faf3" width="320"> | <img src="https://github.com/user-attachments/assets/f877af83-b511-4471-82eb-e4f979c2ca97" width="320"> |
+
 
 ## 📱 Page & Feature Overview
 
