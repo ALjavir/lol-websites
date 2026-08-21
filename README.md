@@ -1,4 +1,4 @@
-# Hextech Codex
+# The League Archives
 
 An interactive, high-performance League of Legends web application and lore portal designed to provide a seamless explore-and-read experience for champions, Runeterra factions, digital comics, patch updates, and official cinematics.
 
