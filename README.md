@@ -16,7 +16,7 @@ An interactive, high-performance League of Legends web application and lore port
 ## 🌐 APIs & Endpoints
 
 | Service / Provider | Resource / Action | Endpoint / URL Structure |
-| :---- | :---- | :--- |
+| :----- | :----- | :--- |
 | **Data Dragon** | Latest Patch Version | `https://ddragon.leagueoflegends.com/api/versions.json` |
 | **Data Dragon** | All Champions Roster | `https://ddragon.leagueoflegends.com/cdn/{version}/data/en_US/champion.json` |
 | **Data Dragon** | Detailed Champion Info | `https://ddragon.leagueoflegends.com/cdn/{version}/data/en_US/champion/{championId}.json` |
